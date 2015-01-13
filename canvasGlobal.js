@@ -174,6 +174,8 @@ if ($("#left-side").length>0 && location.pathname.match(/\/courses\/(.*)/)){
 	$( "ul#section-tabs").find("li > a.outcomes").addClass("icon-star");
 	$( "ul#section-tabs").find("li > a.pages").addClass("icon-document");
 	$( "ul#section-tabs").find("li > a.settings").addClass("icon-settings");
+	$( "ul#section-tabs").find("li > a:contains('Proctortack')").addClass("icon-lock");
+	$( "ul#section-tabs").find("li > a:contains('Proctortrack')").addClass("icon-lock");
 }
 
 (function() {
