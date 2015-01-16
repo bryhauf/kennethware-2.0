@@ -8,27 +8,28 @@
 	/***************************/
 	// The URL for where the "wizard" folder is located
 
-	$_SESSION['template_wizard_url'] = 'https://canvastools.unthsc.edu/global/custom_tools';
+	$_SESSION['template_wizard_url'] = 'https://canvastools.unthsc.edu/global/custom_tools/wizard';
 	require_once __DIR__.'/wizard/resources/blti.php';
 	require_once __DIR__.'/wizard/resources/cryptastic.php';
 	require_once __DIR__.'/wizard/resources/meekrodb2.2.class.php';
 	
 	// Database connection information for Template Wizard
-	DB::$host ='hsc447.hosts.hsc.unt.edu';
+	DB::$host ='localhost';
+	DB::$port = '22';
 	DB::$user = 'canvasadmin';
 	DB::$password = 'Dlc@041109@SPR05';
 	DB::$dbName = 'templateWizard';
 
 	// Strings to help encrypt/decrypt user OAuth tokens
-	$pass = '';
-	$salt = '';
+	$pass = 'xyz123';
+	$salt = '123xyz';
 
 	// Your Canvas OAuth2 Developer information. Used for getting OAuth tokens from users
-	$client_id = '#####';
-	$clientSecret = '######';
+	$client_id = '16980000000000001';
+	$clientSecret = 'avcKMwVL9hCjR1npt8vQQaw3OvgS3v8nihLQC0x3ZYG7orLpMryAU5ovq86k3d68';
 	
 	// The Shared Secret you use when setting up the Template Wizard LTI tool
-	$lti_secret = "###";
+	$lti_secret = "customtools041109";
 
 	// Message to display if the OAuth token request fails
 	$oauth_error_message = 'There is a problem, contact someone to fix it';
