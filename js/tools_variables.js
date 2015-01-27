@@ -44,7 +44,8 @@ var klToolsVariables = {
 		'5608', //Debbie Gillespie
 		'5549', //Eric Arguello
 		'5789', //Haylie Miller
-		'4019' //Russell Coyle
+		'4019', //Russell Coyle
+		'26' //John Planz
     ],
 
 //////////////////////
