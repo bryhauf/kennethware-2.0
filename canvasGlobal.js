@@ -25,7 +25,7 @@
 		'<li><a href="http://library.hsc.unt.edu/" target="_blank"><span class="name ellipsis">Library Services</span></a></li>'+
 		'<li><a href="http://library3.hsc.unt.edu/eres/courseindex.aspx?error=&page=search" target="_blank"><span class="name ellipsis">Course Reserves (eReserves)</span></a></li>'+
 		'<li><a href="http://library.hsc.unt.edu/content/database-tutorials-help" target="_blank"><span class="name ellipsis">Database Tutorials and Help</span></a></li>'+
-		'<li><a href="http://library2.hsc.unt.edu/sp/subjects/guide.php?subject=Writing" target="_blank"><span class="name ellipsis">Writing Styles & Guides</span></a></li>'+
+		'<li><a href="http://guides.library.hsc.unt.edu/writing-styles" target="_blank"><span class="name ellipsis">Writing Styles & Guides</span></a></li>'+
 		//Ending
 		'</ul></td></tr>'+
 		'<td class="menu-item-drop-column">'+
@@ -46,6 +46,7 @@
 		//'<li><a href="https://training.instructure.com/courses/1157710/" target="_blank"><span class="name ellipsis" target="_blank">Canvas Orientation for Instructors</span></a></li>'+
 		'<li><a href="http://web.unthsc.edu/helpdesk"><span class="name ellipsis" target="_blank">ITS Helpdesk & Client Services</span></a></li>'+
 		'<li><a href="http://canvas.unthsc.edu" target="_blank"><span class="name ellipsis">Canvas Support</span></a></li>'+
+		'<li><a href="https://guides.instructure.com/m/5834/l/92747-accessibility-within-canvas" target="_blank"><span class="name ellipsis">Canvas Accessibility Statement</span></a></li>'+
 		'<li><a href="http://web.unthsc.edu/Departments/StudentAffairs/TES/" target="_blank"><span class="name ellipsis">Testing and Evaluation Services</span></a></li>'+
 		//Ending
 		'</ul></td></tr>'+
@@ -54,6 +55,30 @@
 
 	menu.append(studentSupport);
 })();
+
+///////////////////////////////////
+//Add Canvas Video Tour to Header//
+///////////////////////////////////
+(function() {
+	var topbar = $('#topbar');
+	if (!topbar.length) return;
+	//Menu Item Support
+
+	var canvasTourStudent = $('<div/>',{
+		id: 'canvasTour',
+		html: '<a href="https://unthsc.instructure.com/courses/782" id="canvasTourMsg" style="left: 0px;" title="Take the Canvas Student Tour" target="_blank">'+
+		'<span>New Student in Canvas? Take the Student Tour!</span>'+
+		'</a>'
+	});
+	if(window.location.href == "https://unthsc.instructure.com/"){
+		topbar.prepend(canvasTourStudent);
+		$('div#canvasTour').addClass("slideAnimation");
+	} else{
+		topbar.prepend(canvasTourStudent);
+	}
+	
+})();
+
 
 /*$(document).ready(function(){
 	var coursePing = document.createElement('script');
