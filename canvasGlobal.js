@@ -8,6 +8,15 @@
     document.getElementsByTagName('head')[0].appendChild(link);
 }());
 
+(function() {
+	for (var i = ENV.current_user_roles.length - 1; i > -1; i--) {
+
+     if (ENV.current_user_roles[i] == 'student' && location.href.match(/\/courses\/\d+\/quizzes/) &&  location.href.indexOf("history?version=1") > -1){
+		$("h2 > a.pull-right").hide();
+		break;
+	} 
+}
+}());
 ////////////////////////
 //Add Button to Header//
 ////////////////////////
@@ -100,6 +109,9 @@ var coursenum = null;
 		coursenum = coursenum.slice(0, killspot);
 	}
 }());
+
+
+
 
 
 /////////////////////////////////////////////////////
