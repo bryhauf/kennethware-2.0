@@ -133,8 +133,12 @@ var klToolsVariables = {
     ],
     // To show Canvas styles in the editor, check the following against the stylesheets loaded in the head of a Canvas page
     // You may need to update the numbers at the end
-    vendor_legacy_normal_contrast: '/assets/vendor_legacy_normal_contrast.css?1408316217',
-    common_legacy_normal_contrast: '/assets/common_legacy_normal_contrast.css?1408316151',
+    vendor_legacy_normal_contrast: '/assets/vendor_legacy_normal_contrast.css?1428173746',
+    common_legacy_normal_contrast: '/assets/common_legacy_normal_contrast.css?1428173745',
+	
+	// PHP Tools: Part of the tools allow you to pull content from existing pages including institutional policies and procedures
+    // Change to false if you do not have access to PHP for this part of the tools
+    usePHP: true,
 
     // Institutional policies and procedures need to be included in a Canvas course with a page named "Policies and Procedures" include the Canvas course ID here
     klToolTemplatesCourseID: '1461',
