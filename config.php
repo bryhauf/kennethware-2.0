@@ -59,5 +59,5 @@
 	// These variables for the Content Tools to make API calls
 	$canvasDomain = 'https://unthsc.instructure.com';
 	// This OAuth token needs to make GET API calls for any course in your institution
-	$apiToken = "1698~b3JZxAXN2XzOP1fKGFieE8ZomI4VI0nvjpb8Oor2fZpIqECySa3YBPo1IxFlXfHt";
+	$apiToken = "1698~wiVGLbT2ULjsa5y3F6FJT0ZosXnQl1g2HaVGCeBbsbr4FCgRZUtEnh2TF4VYEDVb";
 ?>

@@ -150,14 +150,6 @@ if ($("#custom-script").length>0){
   }, 300);
   
 
-///////////////////////////////////
-//Select Assignment Upload Option//
-///////////////////////////////////
-
-if(document.location.pathname.match(/^\/assignments\/new\//) > -1){
-	$("#assignment_online_submission_types input[name='online_submission_types[online_upload]']").attr("checked","checked"); 
-}
-
 
 ///////////////////////////////////////////
 //Make Unpublished message stick out more//

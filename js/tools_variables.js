@@ -36,17 +36,18 @@ var klToolsVariables = {
     // Change klLimitByUser to "true" to limit to users in the klUserArray array
     // klUserArray is the Canvas user ID not the SIS user ID
     klUserArray: [
-        '5798', //Bryan Hauf
-        '11', //Shivam Pandey
-		'12', //AZ Bashet
-		'6958', //Charles Green
-		'28', //Tim Huang
-		'5608', //Debbie Gillespie
-		'5549', //Eric Arguello
-		'5789', //Haylie Miller
-		'4019', //Russell Coyle
-		'26', //John Planz
-		'11264' //Robin Bartoletti
+        '5798', //B Hauf
+        '11', //S Pandey
+		'12', //A Bashet
+		'6958', //C Green
+		'28', //T Huang
+		'5608', //D Gillespie
+		'5549', //E Arguello
+		'5789', //H Miller
+		'4019', //R Coyle
+		'26', //J Planz
+		'11264', //R Bartoletti
+		'869' //B Cannell
     ],
 
 //////////////////////
@@ -69,23 +70,23 @@ var klToolsVariables = {
     klPagesThemeArray: [
         'kl_generic',
         'kl_basic_color',
-        'kl_bookmark',
-        'kl_apple',
+        //'kl_bookmark',
+        //'kl_apple',
         'kl_basic_bar',
         'kl_flat_sections',
-        'kl_colored_headings',
-        'kl_box_left',
-        'kl_box_left_2',
-        'kl_box_left_3',
-        'kl_square_right',
-        'kl_square_right_2',
-        'kl_square_right_3',
+        //'kl_colored_headings',
+        //'kl_box_left',
+        //'kl_box_left_2',
+        //'kl_box_left_3',
+        //'kl_square_right',
+        //'kl_square_right_2',
+        //'kl_square_right_3',
         'kl_rounded_inset',
-        'kl_rounded_inset_2',
-        'kl_rounded_inset_3',
-        'kl_circle_left',
-        'kl_circle_left_2',
-        'kl_circle_left_3'
+        //'kl_rounded_inset_2',
+        //'kl_rounded_inset_3',
+        'kl_circle_left'
+        //'kl_circle_left_2',
+        //'kl_circle_left_3'
     ],
     // The templates in this list will match the Canvas background color
     klMatchCanvasBackgroundTemplates: [
