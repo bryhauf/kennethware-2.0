@@ -1436,7 +1436,7 @@ margin-right: 15px;
   #kl_wrapper.kl_fp_flat_sections h5,
   #kl_wrapper.kl_flat_sections h5 {color: #000; border-bottom: 1px solid #E0E0E0; font-family: "Helvetica Neue",Helvetica,Arial,sans-serif; font-size: 16px; letter-spacing: 3px; margin: 40px 0 20px; }
   #kl_wrapper.kl_fp_flat_sections > div,
-  #kl_wrapper.kl_flat_sections > div {padding: 25px 45px 45px; margin-bottom: 25px; font-size: 16px; overflow: hidden }
+  #kl_wrapper.kl_flat_sections > div {padding: 25px 45px 25px; margin-bottom: 25px; font-size: 16px; overflow: hidden }
   #kl_wrapper.kl_fp_flat_sections > div img,
   #kl_wrapper.kl_flat_sections > div img {border: 1px solid #ccc; padding: 5px; background: #fff; }
   #kl_wrapper.kl_fp_flat_sections .link_holder img,
@@ -2160,6 +2160,8 @@ margin-right: 15px;
 		vertical-align: top;
 		box-shadow: 10px 0px 5px -2px rgba(0,0,0,0.1);
 	}
+	
+
 	
 
 /**************************************************/
