@@ -966,6 +966,7 @@ klToolsArrays, vendor_legacy_normal_contrast, klAfterToolLaunch, klAdditionalAcc
         // Duplicate Canvas list
         $('.kl_existing_content_btn').unbind("click").click(function (e) {
             e.preventDefault();
+            klCheckPageTemplates();
             $('#kl_import_content_box').dialog({ position: { my: 'right top', at: 'left top', of: '#kl_tools' }, modal: false, width: 265 });
         });
     }
@@ -1011,7 +1012,7 @@ klToolsArrays, vendor_legacy_normal_contrast, klAfterToolLaunch, klAdditionalAcc
             '    <div id="kl_import_content_box" style="display:none;" title="Import Content from Page">' +
             '       <div id="kl_course_template_pages"></div>' +
             '       <div id="kl_existing_pages"></div>' +
-            '       <h4>Copy page content by url</h4>' +
+            '       <label for="kl_page_url">Copy page content by url</label for="kl_page_url">' +
             '       <form class="form-inline input-append"><input id="kl_page_url" type="text" placeholder="Canvas page url" style="width:180px;"><a href="#" id="kl_get_existing" class="btn add-on" data-tooltip="top" title="Copy page contents by url"><i class="fa fa-files-o"></i><span class="screenreader-only">Get existing</span></a></form>' +
             '    </div>' +
             '</div>';
@@ -4759,12 +4760,22 @@ klToolsArrays, vendor_legacy_normal_contrast, klAfterToolLaunch, klAdditionalAcc
 
     function klAboutCustomTools() {
         var addAccordionSection = '<h3 class="kl_wiki" style="margin-top: 10px;">' +
-            '   About Custom Tools' +
+            '   About Design Tools' +
             '</h3>' +
             '<div class="kl_instructions">' +
             '   <p>This collection of tools is designed to assist in rapid course creation.</p>' +
             '   <p class="kl_margin_bottom">These tools were developed by USU&lsquo;s <a href="http://cidi.usu.edu/" target="_blank">Center for Innovative Design &amp; Instruction</a>.</p>' +
             '   <p><a href="https://usu.instructure.com/courses/305202" target="_blank">Learn more about these tools</a></p>' +
+            '</div>';
+        $('#kl_tools_accordion').append(addAccordionSection);
+    }
+    function klAboutSyllabusTools() {
+        var addAccordionSection = '<h3 class="kl_wiki" style="margin-top: 10px;">' +
+            '   About Syllabus Tools' +
+            '</h3>' +
+            '<div class="kl_instructions">' +
+            '   <p>Based on the <a href="http://salsa.usu.edu/" target="_blank"><img src="https://raw.githubusercontent.com/idbygeorge/salsa/master/public/img/salsa_icon.png" style="vertical-align: bottom; max-width: 25px;">Salsa</a> project developed at <a href="http://usu.edu" target="_blank">Utah State University</a>.</p>' +
+            '   <p style="margin-bottom:10px;"><a href="https://usu.instructure.com/courses/305202" target="_blank">Learn more about these tools</a></p>' +
             '</div>';
         $('#kl_tools_accordion').append(addAccordionSection);
     }
@@ -5368,7 +5379,7 @@ klToolsArrays, vendor_legacy_normal_contrast, klAfterToolLaunch, klAdditionalAcc
                     $('.kl_grade_scheme_walkthrough').unbind("click").click(function (e) {
                         e.preventDefault();
                         var defaulthref = $('.settings').attr('href'),
-                            newhref = defaulthref + '?task=setGradeScheme';
+                            newhref = defaulthref + '?task=setGradeScheme#tab-details';
                         $('.settings').attr({'data-tooltip': 'right', 'title': 'Click here!<br>We will open it in a new tab.', 'target': '_blank', 'href': newhref}).trigger('mouseover').focus();
                         $('.settings').click(function () {
                             $('.settings').attr({'data-tooltip': '', 'title': ''}).trigger('mouseout');
@@ -5607,11 +5618,6 @@ klToolsArrays, vendor_legacy_normal_contrast, klAfterToolLaunch, klAdditionalAcc
 ///////////////////////////////////////////////////////////// 
 
     function klImportPageContentThisCourse() {
-        $('#kl_existing_pages').html($('#pages_tab_panel .wiki_pages').clone());
-        $('#kl_existing_pages .wiki_pages').removeClass('wiki_pages page_list').addClass('kl_existing_page_links');
-        $('.kl_existing_page_links li').each(function () {
-            $(this).attr({'data-tooltip': 'left', 'title': 'Pull content from this page'}).addClass('fa fa-files-o');
-        });
         $('.kl_existing_page_links a').unbind("click").click(function (e) {
             e.preventDefault();
             var linkHref, contentUrl;
@@ -5636,24 +5642,15 @@ klToolsArrays, vendor_legacy_normal_contrast, klAfterToolLaunch, klAdditionalAcc
         $.post(klApiToolsPath + 'checkTemplates.php', { courseID: coursenum })
             .done(function (data) {
                 $('#kl_course_template_pages').html(data);
-                $('.kl_import_primary_template').unbind("click").click(function (e) {
-                    e.preventDefault();
-                    $('.kl_import_primary_template i').attr('class', 'fa fa-spinner fa-spin');
-                    $.post(klApiToolsPath + 'getPage.php', { courseID: coursenum, pageUrl: 'primary-template' })
+                $('#inputUnpublished').focus();
+                $('.kl_copy_page').unbind('change').on('change', function (e) {
+                    var myValue = this.value;
+                    $('#kl_course_template_pages').prepend('<div id="kl_getting_content" class="alert alert-info"><i class="fa fa-spinner fa-spin"></i> Retrieving Content</div>');
+                    $.post(klApiToolsPath + 'getPage.php', { courseID: coursenum, pageUrl: myValue })
                         .done(function (data) {
                             $(iframeID).contents().find('body').html(data);
+                            $('#kl_getting_content').remove();
                             $('.kl_import_primary_template i').attr('class', 'fa fa-clipboard');
-                            sectionsPanelDefault = true;
-                            klSetupMainTools();
-                        });
-                });
-                $('.kl_import_secondary_template').unbind("click").click(function (e) {
-                    e.preventDefault();
-                    $('.kl_import_secondary_template i').attr('class', 'fa fa-spinner fa-spin');
-                    $.post(klApiToolsPath + 'getPage.php', { courseID: coursenum, pageUrl: 'secondary-template' })
-                        .done(function (data) {
-                            $(iframeID).contents().find('body').html(data);
-                            $('.kl_import_secondary_template i').attr('class', 'fa fa-clipboard');
                             sectionsPanelDefault = true;
                             klSetupMainTools();
                         });
@@ -5729,7 +5726,7 @@ klToolsArrays, vendor_legacy_normal_contrast, klAfterToolLaunch, klAdditionalAcc
             '</div>',
             tabNavigation = '<ul>' +
             '   <li><a href="#canvas_tools" class="kl_tools_tab">Canvas Tools</a></li>' +
-            '   <li><a href="#kl_tools" id="toolsTrigger" class="kl_tools_tab">Custom Tools</a></li>' +
+            '   <li><a href="#kl_tools" id="toolsTrigger" class="kl_tools_tab">Design Tools</a></li>' +
             '</ul>',
             customAccordionDiv = '<div id="kl_tools_accordion" class="kl_margin_bottom" />';
 
@@ -5834,7 +5831,6 @@ klToolsArrays, vendor_legacy_normal_contrast, klAfterToolLaunch, klAdditionalAcc
         klBindHover();
         $('.kl_add_tools').remove();
 
-        klCheckPageTemplates();
         klImportPageContentThisCourse();
         setTimeout(function () {
             klBindAPIImportsTriggers();
@@ -5850,7 +5846,7 @@ klToolsArrays, vendor_legacy_normal_contrast, klAfterToolLaunch, klAdditionalAcc
         klSyllabusTools();
         klSectionsTool(klToolsArrays.klSyllabusPrimarySections);
         klCustomTablesButton();
-        klAboutCustomTools();
+        klAboutSyllabusTools();
         // activate the accordion
         klInitializeToolsAccordion();
         // Load JavaScript file that will clean up old format
@@ -5887,7 +5883,7 @@ klToolsArrays, vendor_legacy_normal_contrast, klAfterToolLaunch, klAdditionalAcc
         if ($('#editor_tabs').length > 0) {
             // Add button to trigger tools
             if ($('#kl_tools_accordion').length === 0) {
-                $('#right-side').prepend('<a href="#" class="btn btn-primary kl_add_tools"><i class="fa fa-rocket" style="font-size: 18px;"></i> Launch Custom Tools</a>');
+                $('#right-side').prepend('<a href="#" class="btn btn-primary kl_add_tools"><i class="fa fa-rocket" style="font-size: 18px;"></i> Launch Design Tools</a>');
                 // Decide which tools to load
                 toolsToLoad = 'wiki';
                 if (document.URL.indexOf('/syllabus') > -1) {
