@@ -111,9 +111,6 @@ var coursenum = null;
 }());
 
 
-
-
-
 /////////////////////////////////////////////////////
 //Where called for, include custom css or jqlibrary//
 /////////////////////////////////////////////////////
@@ -149,15 +146,12 @@ if ($("#custom-script").length>0){
 }
   }, 300);
   
-
-
 ///////////////////////////////////////////
 //Make Unpublished message stick out more//
 ///////////////////////////////////////////
 
 if ($(".reminder:contains('This Course is Unpublished')").length > 0) {
 	$("body").prepend('<style>.reminder {border: 2px solid #a34140;}.reminder h2 {background-color: #FFEAEA; color: #a34140; border-bottom: 2px solid #a34140;font-weight:bold;}</style>');}
-
 
 /*
 Adds bulk publishing and unpublishing
