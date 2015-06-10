@@ -47,7 +47,8 @@ var klToolsVariables = {
 		'4019', //R Coyle
 		'26', //J Planz
 		'11264', //R Bartoletti
-		'869' //B Cannell
+		'869', //B Cannell
+		'11363' //K-H Ong
     ],
 
 //////////////////////
