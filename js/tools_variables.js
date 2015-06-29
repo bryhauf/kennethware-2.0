@@ -48,7 +48,8 @@ var klToolsVariables = {
 		'26', //J Planz
 		'11264', //R Bartoletti
 		'869', //B Cannell
-		'11363' //K-H Ong
+		'11363', //K-H Ong
+		'5135' //M Ostensen
     ],
 
 //////////////////////
@@ -75,7 +76,7 @@ var klToolsVariables = {
         //'kl_apple',
         'kl_basic_bar',
         'kl_flat_sections',
-        //'kl_colored_headings',
+        'kl_colored_headings',
         //'kl_box_left',
         //'kl_box_left_2',
         //'kl_box_left_3',
@@ -85,9 +86,10 @@ var klToolsVariables = {
         'kl_rounded_inset',
         //'kl_rounded_inset_2',
         //'kl_rounded_inset_3',
-        'kl_circle_left'
+        'kl_circle_left',
         //'kl_circle_left_2',
-        //'kl_circle_left_3'
+        //'kl_circle_left_3',
+		'kl_ribbon'
     ],
     // The templates in this list will match the Canvas background color
     klMatchCanvasBackgroundTemplates: [
@@ -104,7 +106,7 @@ var klToolsVariables = {
 
     // Colors included in this array will be included as swatches in the colorpicker
     klThemeColors: [
-        ['#003366', '#AC8D73', '#A4AEB5', '#0F2439'],
+        ['#006430', '#008E1A', '#00A04A', '#c0392b'],
         ['#000', '#444', '#666', '#999', '#ccc', '#eee', '#f3f3f3', '#fff'],
         ['#f4cccc', '#fce5cd', '#fff2cc', '#d9ead3', '#d0e0e3', '#cfe2f3', '#d9d2e9', '#ead1dc'],
         ['#ea9999', '#f9cb9c', '#ffe599', '#b6d7a8', '#a2c4c9', '#9fc5e8', '#b4a7d6', '#d5a6bd'],
