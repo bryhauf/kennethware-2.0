@@ -49,7 +49,20 @@ var klToolsVariables = {
 		'11264', //R Bartoletti
 		'869', //B Cannell
 		'11363', //K-H Ong
-		'5135' //M Ostensen
+		'5135', //M Ostensen
+		'7706', //M. Quiben
+		'900', //D. Ebert
+		'3619', //Flyzik
+		'3124', //Bugnariu
+		'3426', //Holmes
+		'4405', //M. Richardson
+		'3633', //Salem
+		'1438', //Price
+		'6009', //Mott
+		'4543', //Papa
+		'3529', //Schwarz
+		'1590' //M. Smethers
+		
     ],
 
 //////////////////////

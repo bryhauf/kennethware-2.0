@@ -54,7 +54,7 @@
 		//'<li><a href="https://training.instructure.com/courses/1157710/" target="_blank"><span class="name ellipsis" target="_blank">Canvas Orientation for Instructors</span></a></li>'+
 		'<li><a href="http://web.unthsc.edu/helpdesk"><span class="name ellipsis" target="_blank">ITS Helpdesk & Client Services</span></a></li>'+
 		'<li><a href="http://canvas.unthsc.edu" target="_blank"><span class="name ellipsis">Canvas Support</span></a></li>'+
-		'<li><a href="https://guides.instructure.com/m/5834/l/92747-accessibility-within-canvas" target="_blank"><span class="name ellipsis">Canvas Accessibility Statement</span></a></li>'+
+		'<li><a href="https://community.canvaslms.com/docs/DOC-2061" target="_blank"><span class="name ellipsis">Canvas Accessibility Statement</span></a></li>'+
 		'<li><a href="http://web.unthsc.edu/Departments/StudentAffairs/TES/" target="_blank"><span class="name ellipsis">Testing and Evaluation Services</span></a></li>'+
 		//Ending
 		'</ul></td></tr>'+
@@ -63,6 +63,9 @@
 
 	menu.append(studentSupport);
 })();
+
+
+
 
 ///////////////////////////////////
 //Add Canvas Video Tour to Header//
@@ -200,6 +203,7 @@ if ($("#left-side").length>0 && location.pathname.match(/\/courses\/(.*)/)){
 	$( "ul#section-tabs").find("li > a:contains('Proctortrack')").addClass("icon-lock");
 	$( "ul#section-tabs").find("li > a:contains('Chat')").addClass("icon-discussion-reply");
 	$( "ul#section-tabs").find("li > a:contains('Peerwise')").addClass("icon-peer-review");
+	$( "ul#section-tabs").find("li > a:contains('Student Portfolios')").addClass("fa fa-medkit iconFontIncrease");
 }
 
 (function() {
@@ -268,7 +272,11 @@ function klGetCourseNum() {
 }
 klGetCourseNum();
 
-
+//Apply Font-Awesome Everywhere
+if ($(".fa").length > 0) {
+        $("head").append($("<link/>", { rel: "stylesheet", href: klFontAwesomePath, type: 'text/css' }));
+    }
+	
 // Pull in custom variables
 $.getScript(klToolsVariablesFile, function () {
     'use strict';
@@ -602,3 +610,17 @@ $(function() {
 ////////////////////////////////////////////////////
 // End Course List Filter                         //
 ////////////////////////////////////////////////////
+
+/*if (location.pathname.match(/\/courses\/\d+\/users/) && ($('#addUsers').length>0)){
+	
+	
+	var findAUser = $('<div/>',{
+		'class': 'rs-margin-lr',
+		'id': 'findingUser',
+		html:   '<form accept-charset="UTF-8" action="/accounts/1/users" class="ic-Form-control" id="new_user" method="get"><div style="margin:0;padding:0;display:inline">'+
+		'<input name="utf8" value="✓" type="hidden"></div>'+
+		'<div class="ic-Input-group"><input class="ic-Input" id="user_name" name="user[name]" value="" aria-labelledby="user_name_label" type="text"><button class="Button">Go</button>'+
+        '</div></form></div>'
+	});
+	$('#right-side').append(findAUser);
+}*/
