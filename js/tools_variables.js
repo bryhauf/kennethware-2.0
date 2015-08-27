@@ -39,7 +39,7 @@ var klToolsVariables = {
         '5798', //B Hauf
         '11', //S Pandey
 		'12', //A Bashet
-		'6958', //C Green
+		/*'6958', //C Green*/
 		'28', //T Huang
 		'5608', //D Gillespie
 		'5549', //E Arguello
