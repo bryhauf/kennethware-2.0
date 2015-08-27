@@ -9,8 +9,8 @@
   /*************************/
   
   .kl_tools_tab {font-size: 12px; }
-  #kl_tools_wrapper {width: 265px; position: fixed; height: 100%; overflow-y: scroll; top: 0; right: 0; box-shadow: -1px 1px 3px rgba(0, 0, 0, 0.29); background: #fff; z-index: 100;}
-  #kl_tools{ padding: 10px 5px 5px !important; }
+  #kl_tools_wrapper {width: 265px; position: fixed; height: 100%; /*overflow-y: scroll;*/ top: 0; right: 0; box-shadow: -1px 1px 3px rgba(0, 0, 0, 0.29); background: #fff; z-index: 100;}
+  #kl_tools{ padding: 10px 5px 5px !important; height: 85%; overflow-x: auto; }
   #kl_tools_wrapper .kl_tools_hide {width: 100%; text-align: right; }
   #kl_tools .kl_bordered_section, 
   #kl_icon_box .kl_bordered_section, 
