@@ -61,7 +61,9 @@ var klToolsVariables = {
 		'6009', //J. Mott
 		'4543', //E. Papa
 		'3529', //B. Schwarz
-		'1590' //M. Smethers
+		'1590', //M. Smethers
+		'11361', //K. Meyer
+		'2586' //T. Diver
 		
     ],
 
@@ -150,8 +152,8 @@ var klToolsVariables = {
     ],
     // To show Canvas styles in the editor, check the following against the stylesheets loaded in the head of a Canvas page
     // You may need to update the numbers at the end
-    vendor_legacy_normal_contrast: '/assets/vendor_legacy_normal_contrast.css?1428173746',
-    common_legacy_normal_contrast: '/assets/common_legacy_normal_contrast.css?1428173745',
+    vendor_legacy_normal_contrast: 'https://du11hjcvx0uqb.cloudfront.net/dist/brandable_css/legacy_normal_contrast/bundles/tinymce-944efc51fc.css',
+    common_legacy_normal_contrast: 'https://du11hjcvx0uqb.cloudfront.net/dist/brandable_css/legacy_normal_contrast/bundles/common-5b6f32dae6.css',
 	
 	// PHP Tools: Part of the tools allow you to pull content from existing pages including institutional policies and procedures
     // Change to false if you do not have access to PHP for this part of the tools
