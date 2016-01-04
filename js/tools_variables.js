@@ -63,8 +63,11 @@ var klToolsVariables = {
 		'3529', //B. Schwarz
 		'1590', //M. Smethers
 		'11361', //K. Meyer
-		'2586' //T. Diver
-		
+		'2586', //T. Diver
+		'10758', //C. Wei
+		'7769', //C. Gibson
+		'4005', //S. Elrod
+		'12419' //M. Howard
     ],
 
 //////////////////////
