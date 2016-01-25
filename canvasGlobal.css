@@ -2,88 +2,109 @@
 /*******************************************/
 /*The CSS below pertains to custom classes.*/
 /*******************************************/
-@media print {
-	a[href]:after{
-		content: none;
+
+#cus-top-menu{
+	background-color: #FFF;
+	color: #000;
+	padding-left: 100px;
+	padding-right: 100px;
+	text-align: left;
+	text-transform: uppercase;
+	min-width: 930px;
+	max-height: 70px;
+	/*border-bottom: 1px solid #D6D6D6;*/
+		overflow: hidden;
+}
+
+#cus-top-menu ul ul {
+	display: none;
+}
+
+	#cus-top-menu ul li:hover > ul {
+		display: block;
 	}
-}
-/*adjusts the background color of side and bottom wrapper*/
-body{
-	background-color: rgba(45, 78, 49, 0.1);
-	background-image: none;
-	background-repeat: no-repeat;
-	background-position: right bottom;
-}
 
-/*adjusts the color of the menu borders from grey to white*/
-.menu-item.hover .menu-item-title {
-	border-color: #fff !important;
-}
 
-#section-tabs-header{
-	word-wrap: break-word;
-}
-
-@-webkit-keyframes slide {
-    from {left: -250px;}
-    to {left: 0px;}
-}
-
-@keyframes slide {
-    from {left: -250px;}
-    to {left: 0px;}
-}
-
-.iconFontIncrease:before{
-	font-size: 15px;
-}
-
-#canvasTour{
-	width: auto;
-	height: 20px;
-	float: left;
+#cus-top-menu ul {
+	background: #fff; 
+	/*background: linear-gradient(top, #efefef 0%, #bbbbbb 100%);  
+	background: -moz-linear-gradient(top, #efefef 0%, #bbbbbb 100%); 
+	background: -webkit-linear-gradient(top, #efefef 0%,#bbbbbb 100%); 
+	box-shadow: 0px 0px 9px rgba(0,0,0,0.15);*/
+	padding: 0 20px;
+	border-radius: 10px;  
+	list-style: none;
 	position: relative;
-	left: 0px;
-	background: none repeat scroll 0% 0% /*rgb(73, 169, 66)*/ rgb(0, 0, 0);
-	border: 1px solid /*rgb(73, 169, 66)*/ rgb(0, 0, 0) ;
-	border-bottom-right-radius: 5px;
-	/*border-bottom-left-radius: 5px;*/
-	opacity: 1;
-	transition: opacity 0.5s ease;
-	padding-right: 10px;
+	white-space: nowrap;
+	display: inline-table;
+	overflow: hidden;
 }
+	#cus-top-menu ul:after {
+		content: ""; clear: both; display: block;
+	}
 
-.slideAnimation{
-	-webkit-animation: slide 1.5s ease-out;
-	-moz-animation: slide 1.5s ease-out;
-	animation: slide 1.5s ease-out;
-}
 
-#canvasTour:hover{
-	background-color: rgb(0,0,0);
-	opacity: .75;
-	text-decoration: underline;
-}
+	#cus-top-menu ul li {
+		float: left;
+	}
+		#cus-top-menu ul li:hover {
+			/*background: #4b545f;
+			background: linear-gradient(top, #4f5964 0%, #5f6975 40%);
+			background: -moz-linear-gradient(top, #4f5964 0%, #5f6975 40%);
+			background: -webkit-linear-gradient(top, #4f5964 0%,#5f6975 40%);*/
+		}
+			#cus-top-menu ul li:hover a {
+				color: #60C659;
+			}
+			
+			#cus-top-menu ul li:active a{
+				color: #555;
+				background-color: #E7E7E7;
+			}
+		
+		#cus-top-menu ul li a {
+			display: block; 
+			padding: 25px 15px;
+			color: #757575;
+			text-decoration: none;
+		}
+			
+		
+	#cus-top-menu ul ul {
+		background: #fff; 
+		border-radius: 0px; 
+		padding: 0;
+		margin:0;
+		margin-top: 5px;
+		position: absolute; 
+		top: 100%;
+		/*box-shadow: 0px 0px 9px rgba(0,0,0,0.15);*/
+	}
+		#cus-top-menu ul ul li {
+			float: none; 
+			border-top: 1px solid #D6D6D6;
+			border-bottom: 1px solid #D6D6D6; 
+			position: relative;
+		}
+			#cus-top-menu ul ul li a {
+				padding: 15px 40px;
+				color: #fff;
+			}	
+				nav ul ul li a:hover {
+					background: #4b545f;
+				
+				}
+		
+	#cus-top-menu ul ul ul {
+		position: absolute; left: 100%; top:0;
+	}
+		
+
 
 #canvasTourMsg{
-	height: 20px;
-	width: 275px;
-	/*border: solid #49A942;
-	border-width: 10px 0px 10px 10px;
-	border-right: 0px;
-	border-left: 24px solid rgba(255, 255, 255, 0);*/
-	position: relative;
-	/*font: bold 1.0em/3.0em Helvetica, Arial, sans-serif;*/
-	text-decoration: none;
-	color: #fafafa;
-	margin: 0;
-	font-weight: 600;
-}
-
-#canvasTourMsg span{
-	position: relative;
-	padding: 0px 0px 0px 15px;
-	display: block;
+	color: #000;
+	width: auto;
+	
 }
 
 .Apple-style-span{
@@ -91,311 +112,45 @@ body{
 	margin-left: 0px !important;
 }
 
-/******************************************************/
-/*The CSS below pertains to the Global Navigation bar.*/
-/******************************************************/
-
-#courses_menu_item, #assignments_menu_item, #grades_menu_item, #calendar_menu_item{
-	z-index: 9999;
-}
-
-/*Bold the sub-items under newly created links*/
-.menu-item-heading{
-	font-weight: bold;
-}
-
-/*create extra spacing between header and main wrappers
-#section-tabs-header, #main, #right-side-wrapper{
-	padding-top: 20px !important;
-}*/
-
-/*add icon to Grades link*/
-#grades_menu_item .icon-check-plus:before{
-	font-size: 22px;
-	color: rgb(0,0,0);
-	/*color: rgb(0,153,0);*/
-	position: absolute;
-	height: 41px;
-	bottom: 25px;
-	padding: 0px 10px;
-	top: auto;
-	opacity: .75;
-	transition: opacity 0.5s ease;
-}
-
-/*hover effect for Grades link icon*/
-li#grades_menu_item:hover .icon-check-plus:before{
-	color: rgb(192,57,43);
-	opacity: 1;
-}
-
-/*add icon to Calendar link*/
-#calendar_menu_item .icon-calendar-day:before{
-	font-size: 22px;
-	color: rgb(0,0,0);
-	/*color: rgb(153,0,0);*/
-	position: absolute;
-	height: 41px;
-	bottom: 25px;
-	padding: 0px 20px;
-	top: auto;
-	opacity: .75;
-	transition: opacity 0.5s ease;
-}
-
-/*hover effect for Commons link icon*/
-li#calendar_menu_item:hover .icon-calendar-day:before{
-	color: rgb(192,57,43);
-	/*color: rgb(153,0,0);*/
-	opacity: 1;
-}
-
-/*add icon to Commons link*/
-#context_external_tool_373_menu_item .icon-instructure:before{
-	font-size: 22px;
-	color: rgb(0,0,0);
-	/*color: rgb(153,0,0);*/
-	position: absolute;
-	height: 41px;
-	bottom: 24px;
-	padding: 0px 22px;
-	top: auto;
-	opacity: .75;
-	transition: opacity 0.5s ease;
-}
-
-/*hover effect for Calendar link icon*/
-li#context_external_tool_373_menu_item:hover .icon-instructure:before{
-	color: rgb(192,57,43);
-	/*color: rgb(153,0,0);*/
-	opacity: 1;
-}
-
-/*add icon to Courses link*/
-#courses_menu_item .icon-folder:before{
-	font-size: 22px;
-	color: rgb(0,0,0);
-	/*color: rgb(0,153,204);*/
-	position: absolute;
-	height: 41px;
-	bottom: 25px;
-	padding: 0px 20px;
-	top: auto;
-	transition: opacity 0.5s ease;
-	opacity: .75;
-}
-
-/*adjust icon centering if groups appears in link*/
-.icon-folder-with-groups:before{
-	padding: 0px 55px !important;
-}
-
-/*adjust icon centering if groups does not appear in link */
-.icon-folder-without-groups:before{
-	padding: 0px 25px !important;
-}
-
-/*hover effect for Courses link icon*/
-li#courses_menu_item:hover a.icon-folder:before{
-	color: rgb(192,57,43);
-	/*color: rgb(0,153,204);*/
-	opacity: 1;
-}
-
-/*add icon to Resources link*/
-#resources_menu_item .icon-collection-save:before{
-	font-size: 22px;
-	color: rgb(0,0,0);
-	/*color: rgb(255,204,51);*/
-	position: absolute;
-	height: 41px;
-	bottom: 25px;
-	padding: 0px 25px;
-	top: auto;
-	transition: opacity 0.5s ease;
-	opacity: .75;
-}
-
-/*hover effect for Resources link icon*/
-li#resources_menu_item:hover a.icon-collection-save:before{
-	color: rgb(192,57,43);
-	/*color: rgb(255,204,51);*/
-	opacity: 1;
-}
-
 /*add icon to Support link*/
-#support_menu_item .icon-question:before{
-	font-size: 22px;
-	color: rgb(0,0,0);
-	position: absolute;
-	height: 41px;
-	bottom: 22.5px;
-	padding: 0px 20px;
+li[id^="cus-link-"] a:hover, li[id^="cus-link-"] a:active, li[id^="cus-link-"] a:visited{
+	color:#fff;
+}
+
+li[id^="cus-link-"] a.fa{
+	display: block;
+}
+
+li[id^="cus-link-"] a:before{
+	font-size: 28px;
+	color: rgb(255,255,255);
+	position: relative;
+	width: 48px;
+	margin: 0px auto;
+	padding: 0px;
 	top: auto;
-	transition: opacity 0.5s ease;
-	opacity: .75;
+	/*bottom: 22.5px;*/
+	/*transition: opacity 0.5s ease;
+	opacity: 1;*/
+	transition: all 0.2s ease-out 0s;
 }
 
-/*hover effect for Support link icon*/
-li#support_menu_item:hover .icon-question:before{
-	color: rgb(192,57,43);
-	/*color: rgb(0,0,0);*/
-	opacity: 1;
-}
-
-
-/* Replace the gray background with something that matches your colors.  You can use .pngs with alpha transparency. If you don't use an image, you need to remove ours*/
-/*Image size used is width 8px, height 117px*/
-#header { 
-  /*background: url("https://web.unthsc.edu/images/canvas/header_bg.jpg") repeat-x scroll left center transparent;*/
-  background: none repeat scroll 0% 0% #FFF;
-  box-shadow: 1px 1px 30px 5px rgba(0, 0, 0, 0.2);
-}
-
-#header-inner{
-	padding-top: 56px;
-}
-
-/*Replace the canvas logo with your University logo.*/
-#header-logo, #header.no-user #header-logo{
-  background: url("https://canvastools.unthsc.edu/global/images/UNTHSC_large.png") no-repeat scroll 0 100% transparent !important;
-  background-size: 250px 40px !important;
-  top: auto;
-  bottom: 20px;
-  height: 40px;
-  left: 15px;
-  width: 250px;
-  z-index: 1; /*this places your logo ontop so that the whole area of the logo can be clickable. Without this, only half the logo is clickable*/
-}
-
-#header.no-user #header-logo {
-  background: url("https://canvastools.unthsc.edu/global/images/UNTHSC.png") no-repeat scroll 0 0 transparent;
-  background-size: 44px 36px;
-  top:4px;
-  bottom: 0px;
-  height: 45px;
-  left: 15px;
-  z-index: 1; /*this places your logo ontop so that the whole area of the logo can be clickable. Without this, only half the logo is clickable*/
-}
-
-
-/*If you replace the left canvas logo with the University logo, this will "move" the Canvas logo to the right side of the screen. This is the red circle with white lettering displayed on the right side of the navigation bar.*/
-#header-logo-secondary {
-  background: url("https://canvastools.unthsc.edu/global/images/Canvas_byinstructure_color_web.png") no-repeat scroll right center transparent;
-  background-size: 165px 40px;
-  bottom: 15px;
-  height: 40px;
-  position: absolute;
-  right: 20px;
-  width: 170px;
-  display: block;
+/*hover effect icon*/
+li[id^="cus-link-"]:hover a:before{
+	-webkit-transform:scale(1.075);
+	transform:scale(1.075);
 }
 
 /*Make the Canvas logo disappear when window is resized below 1075px*/
-@media screen and (max-width: 1075px) {
+/*@media screen and (max-width: 1075px) {
 	#header-logo-secondary {
 		display: none;
 	}
-}
-
-
-/*If your logo is bigger, you can make room by moving the Global navigation links (Courses, Assignments, Grades, Calendar)*/
-#menu { 
-min-width: 700px;
-margin-left: 325px;
-margin-right: 15px;
- } /*175px is the default value*/
- 
-.menu-item .menu-item-title, .menu-item .menu-item-no-drop{
-	text-shadow: none;
-	color: #000;
-	font-weight: 600;
-}
-
-/*Change the background color of the identity bar (the area that says "Name Inbox Settings Logout Help).*/
-#identity {
-	background-color: #007D3C;
-	background-image: -moz-linear-gradient(top, #35842C, #006430);
-	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#35842C), to(#006430));
-	background-image: -webkit-linear-gradient(top, #35842C, #006430);
-	background-image: -o-linear-gradient(top, #35842C, #006430);
-	background-image: linear-gradient(to bottom, #35842C, #006430);
-	background-repeat: repeat-x;
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FF35842C', endColorstr='#FF006430', GradientType=0);
-  /*background-color: #00853E;*/
-}
-
-/*Change the text color of the links on the identity bar (the area that says "Name Inbox Settings Logout Help).*/
-#identity a { color: #fff; }
-
-/*Change the color of the circle around the number of unread inbox messages*/
-/*#identity .inbox a .unread-messages-count {
-	background-color: #00CC00;
 }*/
 
-/*Changes color of text/links in the Help navigation*/
-/*#identity #identity-help-container a { color: #fff; }*/
-
-/*Change the color of the Global Navigation links (courses, assignments, grades, calendar). If the text looks fuzzy, remove the text shadow.*/
-/*.menu-item .menu-item-title, .menu-item .menu-item-no-drop {
-  color: #FAFBF4;
-  text-shadow: none;
-}*/
-
-
-/*****************************************************/
-/*The CSS below pertains to the initial Login Screen.*/
-/*Template A v1.0 (mobile ready) by Bryan Hauf********/
-/*UNT Health Science Center bryan.hauf@unthsc.edu*****/
-/*****************************************************/
-
-
-/*login box. Changing this image changes the background of the whole login box. Dimensions for image is width 665px, height 435px. Adjust these to your liking.*/
-#modal-box.login-box { background: url("https://canvastools.unthsc.edu/global/images/login-bg.jpg") no-repeat !important; }
-
-
-/*Set "background:display" to "background:none" to remove the extra canvas logo*/
- body.modal #modal-box.login-box h1{ 
- background: none;
+#submit_quiz_form .question_holder{
+	overflow: visible;
 }
- 
-
-/*Resize the login box to fit my image*/
- body.modal #modal-box.login-box { 
- height: 373px; /*Using the height from the login box backgrouhnd image above*/
- width: 665px; /*Using the width from the login box background image above*/
- padding: 0px;
- }
-
-
-/*Change the color of the login button*/
- body.modal #modal-box .btn-primary, body.modal #login-box .btn-primary {
- border-color: #174A7C;
- background-color: rgb(43, 136, 54) !important; /*This needs to be the same color as the second rgb value on the line below*/
- background-image: linear-gradient(to bottom, rgb(57, 181, 74), rgb(43, 136, 54)); /*this is a top to bottom gradient. I suggest using a lighter to darker color, but not much variation. If you want the button to be blue (default), comment out or completey remove this section.*/
- }
- 
-/*Change the color of the text "Stay signed in" under the username box. */
- #modal-box .login-options {
- color: rgb(57, 181, 74) !important; 
- }
-
-/*Change the color of 'don't know your password'*/
- body.modal #modal-box.login-box a.forgot_password_link { color: #FFF !important; }
-
-/*Change the position of the login box (username, password, stay signed in/don't know your password?, login button). Increasing the negative value will move the box further up the page. Decreasing to zero will move it closer to the bottom of the page.*/
- /*body.modal #modal-box.login-box form { 
- margin-top:-100px;
- }*/
-
-/*Changes the background color of the flash notice. This is what you see at the top of the page when you login. */
- #flash_notice_message, #flash_error_message { background-color: #8DC34B !important; } 
-
-/*changes the width of the flash notice to align with the width of the login box*/
- #unauthorized_holder{
-	width: 665px; /*This width should match the width of the resized login box*/
-}
-
 
 /**********************************************************************/
 /**************          KENNETHWARE STYLING             **************/
@@ -496,7 +251,7 @@ margin-right: 15px;
   #kl_wrapper #kl_modules.kl_modules_columns_1 ul {column-count:1; -moz-column-count:1; /* Firefox */ -webkit-column-count:1; /* Safari and Chrome */ }
   #kl_wrapper #kl_modules.kl_modules_columns_3 ul {column-count:3; -moz-column-count:3; /* Firefox */ -webkit-column-count:3; /* Safari and Chrome */ }
   #kl_wrapper #kl_modules.kl_modules_columns_4 ul {column-count:4; -moz-column-count:4; /* Firefox */ -webkit-column-count:4; /* Safari and Chrome */ }
-  #kl_wrapper #kl_modules ul li {list-style-type: none; font-size: 1.2em; min-height: 20px; margin-bottom: 10px; margin-top: 0px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;}
+  #kl_wrapper #kl_modules ul li {list-style-type: none; font-size: 1.2em; min-height: 20px; margin-bottom: 10px; margin-top: 0px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-width: 300px; max-width: 475px;}
   #kl_wrapper #kl_modules ul li,
   #kl_wrapper #kl_modules ul li a, 
   #kl_wrapper #kl_modules ul li a:hover,
@@ -661,7 +416,7 @@ margin-right: 15px;
   #kl_wrapper.kl_fp_panel_nav_2 {position: relative; }
   #kl_wrapper.kl_fp_panel_nav_2 #kl_banner {background-color: #0F2439; color: #FFF; /*font-family: "PT Sans";*/ height: 72px; margin-bottom:6px; width: 100%; }
   #kl_wrapper.kl_fp_panel_nav_2 #kl_banner {max-width:100%; }
-  #kl_wrapper.kl_fp_panel_nav_2 #kl_banner h2 {line-height: 26px; font-size: 26px; }
+  #kl_wrapper.kl_fp_panel_nav_2 #kl_banner h2 {line-height: 26px; font-size: 26px; margin: 10px 0 0 0; }
   #kl_wrapper.kl_fp_panel_nav_2 #kl_banner #kl_banner_left {border-right: 5px solid #fff; display: block; float: left; font-size: 1.2em; height: 72px; width: 100px; }
   #kl_wrapper.kl_fp_panel_nav_2 #kl_banner #kl_banner_left .kl_mod_text {display: block; font-size: 24px; line-height: 26px; padding: 9px 0 1px; text-align: center; width: 100%; }
   #kl_wrapper.kl_fp_panel_nav_2 #kl_banner #kl_banner_left .kl_mod_num {display: block; font-size: 17px; line-height: 26px; padding: 3px 0 7px; text-align: center; width: 100%; }
@@ -669,7 +424,7 @@ margin-right: 15px;
   #kl_wrapper.kl_fp_panel_nav_2 #kl_banner #kl_banner_right .kl_subtitle { display: block; font-size: medium; line-height: 20px; margin-top: 5px;}
   #kl_wrapper.kl_fp_panel_nav_2 #kl_banner_image {margin-bottom: 20px; }
 
-  #kl_wrapper.kl_fp_panel_nav_2 #kl_navigation {background-color: rgba(255, 255, 255, 0.75); color: #0F2439; font-family: "Helvetica", "Arial", sans-serif; font-size: 16px; font-weight: bold; height: 313px; margin: 0; min-width: 250px; overflow-x:hidden; overflow-y: auto; position: absolute; top: 78px; width: 30%; }
+  #kl_wrapper.kl_fp_panel_nav_2 #kl_navigation {background-color: rgba(255, 255, 255, 0.75); color: #0F2439; font-family: "Helvetica", "Arial", sans-serif; font-size: 16px; font-weight: bold; /*height: 313px;*/ margin: 0; min-width: 250px; overflow-x:hidden; overflow-y: auto; position: absolute; top: 78px; width: 30%; }
   #kl_wrapper.kl_fp_panel_nav_2 #kl_navigation ul {margin: 30px 0 0 15px; }
   #kl_wrapper.kl_fp_panel_nav_2 #kl_navigation ul li {background: none; display: block; list-style-type: none; padding: 0 0 50px 10px; }
   #kl_wrapper.kl_fp_panel_nav_2 #kl_navigation ul li a {color: #003366; }
@@ -1376,32 +1131,12 @@ margin-right: 15px;
   #kl_wrapper.kl_ribbon #kl_navigation a[class^=icon-]:before,
   #kl_wrapper.kl_ribbon #kl_navigation a[class*=fa-]:before,
   #kl_wrapper.kl_ribbon #kl_navigation a[class^=fa-]:before {display: inline-block; background: #fff; padding: 7px 0px; text-align: center; border-radius: 20px; color: #696969; margin-right: 8px; border: 1px solid #696969;}
-  
+  #kl_wrapper.kl_ribbon p{ overflow:auto;}
 
   
-#kl_wrapper.kl_ribbon h3 { text-align: right; position: relative; margin: 20px -30px 30px; padding: 10px 40px; text-shadow: 0px 1px rgba(0, 0, 0, 0.8); /*box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.3);*/ clear: both; color: #FFF; font-family: "Helvetica Neue",Helvetica,Arial,sans-serif; font-size: 22px; letter-spacing: 3px; 
-background: -moz-linear-gradient(right,  rgba(0,100,48,1) 0%, rgba(0,142,26,1) 13%, rgba(0,142,26,1) 42%, rgba(0,142,26,0) 99%); /* FF3.6+ */
-background: -webkit-gradient(linear, right top, right top, color-stop(0%,rgba(0,100,48,1)), color-stop(13%,rgba(0,142,26,1)), color-stop(42%,rgba(0,142,26,1)), color-stop(99%,rgba(0,142,26,0))); /* Chrome,Safari4+ */
-background: -webkit-linear-gradient(right,  rgba(0,100,48,1) 0%,rgba(0,142,26,1) 13%,rgba(0,142,26,1) 42%,rgba(0,142,26,0) 99%); /* Chrome10+,Safari5.1+ */
-background: -o-linear-gradient(right,  rgba(0,100,48,1) 0%,rgba(0,142,26,1) 13%,rgba(0,142,26,1) 42%,rgba(0,142,26,0) 99%); /* Opera 11.10+ */
-background: -ms-linear-gradient(right,  rgba(0,100,48,1) 0%,rgba(0,142,26,1) 13%,rgba(0,142,26,1) 42%,rgba(0,142,26,0) 99%); /* IE10+ */
-background: linear-gradient(to left,  rgba(0,100,48,1) 0%,rgba(0,142,26,1) 13%,rgba(0,142,26,1) 42%,rgba(0,142,26,0) 99%); /* W3C */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#006430', endColorstr='#00008e1a',GradientType=1 ); /* IE6-9 */
-	/*max-width: 1000px;*/
-	}
-	
-	 
-  /*#kl_wrapper.kl_ribbon h3:before, */
-  #kl_wrapper.kl_ribbon h3:after{
-  position: absolute;
-  bottom: -10px;
-  content:'';
-  border-top: 10px solid #555;
-  border-right: 10px solid transparent;
-  right:0;
-  }
 
-	 #kl_wrapper.kl_ribbon div:nth-of-type(2n) h3{
+
+	 #kl_wrapper.kl_ribbon div h3{
 		text-align: left; position: relative; margin: 20px -30px 30px; padding: 10px 40px; text-shadow: 0px 1px rgba(0, 0, 0, 0.8); /*box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.3);*/ clear: both; color: #FFF; 
 		font-family: "Helvetica Neue",Helvetica,Arial,sans-serif; font-size: 22px; letter-spacing: 3px;
 		background: -moz-linear-gradient(left,  rgba(0,100,48,1) 0%, rgba(0,142,26,1) 13%, rgba(0,142,26,1) 42%, rgba(0,142,26,0) 99%); /* FF3.6+ */
@@ -1413,7 +1148,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#006430', end
 		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#006430', endColorstr='#00008e1a',GradientType=1 ); /* IE6-9 */	 
 	 }
 
-  #kl_wrapper.kl_ribbon div:nth-of-type(2n) h3:after{
+  #kl_wrapper.kl_ribbon div h3:after{
+		content:'';
+		position: absolute;
 		border-top: 10px solid #555;
 		border-left: 10px solid transparent;
 		left: 0;
@@ -1435,7 +1172,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#006430', end
   #kl_wrapper.kl_ribbon h5 {color: #000; border-bottom: 1px solid #E0E0E0; font-family: "Helvetica Neue",Helvetica,Arial,sans-serif; font-size: 16px; letter-spacing: 3px; margin: 40px 0 20px; }
   
   #kl_wrapper.kl_ribbon > div { padding: 25px 45px 25px; margin-bottom: 25px; font-size: 16px; overflow: hidden }
-  #kl_wrapper.kl_ribbon > div:not(#kl_banner) { margin: 30px auto; padding: 20px; background: #fff; -moz-border-radius: 10px; border-radius: 10px; -moz-box-shadow: 0 0 10px #555; -webkit-box-shadow: 0 0 10px #555; box-shadow: 0 0 10px #555; overflow: visible; }
+  #kl_wrapper.kl_ribbon > div:not(#kl_banner) { margin: 30px auto; padding: 20px; background: #fff; -moz-border-radius: 10px; border-radius: 10px; -moz-box-shadow: -7px -5px 10px -4px #555; -webkit-box-shadow: -7px -5px 10px -4px #555; box-shadow: -7px -5px 10px -4px #555; overflow: visible; }
   #kl_wrapper.kl_ribbon > div img {border: 1px solid #ccc; padding: 5px; background: #fff; }
   #kl_wrapper.kl_ribbon .link_holder img {border:none; background: none; }
   #kl_wrapper.kl_ribbon > div:nth-child(odd) {background: #f8f8f8; }

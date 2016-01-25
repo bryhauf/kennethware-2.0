@@ -32,42 +32,10 @@ var klToolsVariables = {
         'admin'
     ],
     // OPTIONAL: Limit tools to an array of Canvas user IDs
-    klLimitByUser: true,
+    klLimitByUser: false,
     // Change klLimitByUser to "true" to limit to users in the klUserArray array
     // klUserArray is the Canvas user ID not the SIS user ID
     klUserArray: [
-        '5798', //B Hauf
-        '11', //S Pandey
-		'12', //A Bashet
-		/*'6958', //C Green*/
-		'28', //T Huang
-		'5608', //D Gillespie
-		'5549', //E Arguello
-		'5789', //H Miller
-		'4019', //R Coyle
-		'26', //J Planz
-		'11264', //R Bartoletti
-		'869', //B Cannell
-		'11363', //K-H Ong
-		'5135', //M. Ostensen
-		'7706', //M. Quiben
-		'900', //D. Ebert
-		'3619', //M. Flyzik
-		'3124', //N. Bugnariu
-		'3426', //V. Holmes
-		'4405', //M. Richardson
-		'3633', //Y. Salem
-		'1438', //C. Williams-Price
-		'6009', //J. Mott
-		'4543', //E. Papa
-		'3529', //B. Schwarz
-		'1590', //M. Smethers
-		'11361', //K. Meyer
-		'2586', //T. Diver
-		'10758', //C. Wei
-		'7769', //C. Gibson
-		'4005', //S. Elrod
-		'12419' //M. Howard
     ],
 
 //////////////////////
@@ -155,8 +123,10 @@ var klToolsVariables = {
     ],
     // To show Canvas styles in the editor, check the following against the stylesheets loaded in the head of a Canvas page
     // You may need to update the numbers at the end
-    vendor_legacy_normal_contrast: 'https://du11hjcvx0uqb.cloudfront.net/dist/brandable_css/legacy_normal_contrast/bundles/tinymce-944efc51fc.css',
-    common_legacy_normal_contrast: 'https://du11hjcvx0uqb.cloudfront.net/dist/brandable_css/legacy_normal_contrast/bundles/common-5b6f32dae6.css',
+   /* vendor_legacy_normal_contrast: 'https://du11hjcvx0uqb.cloudfront.net/dist/brandable_css/legacy_normal_contrast/bundles/tinymce-944efc51fc.css',
+    common_legacy_normal_contrast: 'https://du11hjcvx0uqb.cloudfront.net/dist/brandable_css/legacy_normal_contrast/bundles/common-5b6f32dae6.css',*/
+	/*vendor_legacy_normal_contrast: '/assets/vendor_legacy_normal_contrast.css?1408316217',
+    common_legacy_normal_contrast: '/assets/common_legacy_normal_contrast.css?1408316151',*/
 	
 	// PHP Tools: Part of the tools allow you to pull content from existing pages including institutional policies and procedures
     // Change to false if you do not have access to PHP for this part of the tools

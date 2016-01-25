@@ -1,4 +1,4 @@
-//Global JS File
+﻿//Global JS File
 
 (function() {
     var link = document.createElement('link');
@@ -8,7 +8,7 @@
     document.getElementsByTagName('head')[0].appendChild(link);
 }());
 
-(function() {
+/*(function() {
 	for (var i = ENV.current_user_roles.length - 1; i > -1; i--) {
 
      if (ENV.current_user_roles[i] == 'student' && location.href.match(/\/courses\/\d+\/quizzes/) &&  location.href.indexOf("history?version=1") > -1){
@@ -16,92 +16,63 @@
 		break;
 	} 
 }
-}());
-////////////////////////
-//Add Button to Header//
-////////////////////////
-(function() {
-	var menu = $('#menu');
-	if (!menu.length) return;
-	//Menu Item Support
-
-	var studentSupport = $('<li/>', {
-		'class': 'menu-item',
-		'id': 'support_menu_item',
-		html: '<a class="menu-item-title" href="/">Support&nbsp;<span class="menu-item-title-icon"></span><i class="icon-mini-arrow-down"></i></a><div class="menu-item-drop"><table cellspacing="0"><tbody><tr><td class="menu-item-drop-column">'+
-		'<span id="test" class="menu-item-heading" >Research Help</span><ul class="menu-item-drop-column-list">'+
-		//List Research Help items
-		'<li><a href="http://library.hsc.unt.edu/" target="_blank"><span class="name ellipsis">Library Services</span></a></li>'+
-		'<li><a href="http://library.hsc.unt.edu/content/database-tutorials-help" target="_blank"><span class="name ellipsis">Database Tutorials and Help</span></a></li>'+
-		'<li><a href="http://guides.library.hsc.unt.edu/writing-styles" target="_blank"><span class="name ellipsis">Writing Styles & Guides</span></a></li>'+
-		//Ending
-		'</ul></td></tr>'+
-		'<td class="menu-item-drop-column">'+
-		'<span id="test" class="menu-item-heading">Academic Help</span><ul class="menu-item-drop-column-list">'+
-		//List Academic Help items
-		'<li><a href="http://web.unthsc.edu/Departments/StudentAffairs/" target="_blank"><span class="name ellipsis">Student Affairs</span></a></li>'+
-		'<li><a href="http://web.unthsc.edu/departments/studentaffairs/cap" target="_blank"><span class="name ellipsis">Center for Academic Performance</span></a></li>'+
-		'<li><a href="http://web.unthsc.edu/info/200306/center_for_academic_performance/380/tutoring" target="_blank"><span class="name ellipsis">Tutoring</span></a></li>'+
-		'<li><a href="http://web.unthsc.edu/info/200306/center_for_academic_performance/382/writing_and_presentation_support" target="_blank"><span class="name ellipsis">Writing & Presentation Support</span></a></li>'+
-		'<li><a href="http://web.unthsc.edu/info/200496/office_of_disability_accommodations" target="_blank"><span class="name ellipsis">Office of Disability Accommodations</span></a></li>'+
-		//Ending
-		'</ul></td></tr>'+
-		'<td class="menu-item-drop-column">'+
-		//Title in dropdown menu
-		'<span id="test" class="menu-item-heading" >Support Resources</span><ul class="menu-item-drop-column-list">'+
-		//List items
-		//'<li><a href="https://training.instructure.com/courses/347469/" target="_blank"><span class="name ellipsis" target="_blank">Canvas Orientation for Students</span></a></li>'+
-		//'<li><a href="https://training.instructure.com/courses/1157710/" target="_blank"><span class="name ellipsis" target="_blank">Canvas Orientation for Instructors</span></a></li>'+
-		'<li><a href="http://web.unthsc.edu/helpdesk"><span class="name ellipsis" target="_blank">ITS Helpdesk & Client Services</span></a></li>'+
-		'<li><a href="http://canvas.unthsc.edu" target="_blank"><span class="name ellipsis">Canvas Support</span></a></li>'+
-		'<li><a href="https://community.canvaslms.com/docs/DOC-2061" target="_blank"><span class="name ellipsis">Canvas Accessibility Statement</span></a></li>'+
-		'<li><a href="http://web.unthsc.edu/Departments/StudentAffairs/TES/" target="_blank"><span class="name ellipsis">Testing and Evaluation Services</span></a></li>'+
-		//Ending
-		'</ul></td></tr>'+
-		'</tbody></table></div>'
-	});
-
-	menu.append(studentSupport);
-})();
-
-
+}());*/
 
 
 ///////////////////////////////////
 //Add Canvas Video Tour to Header//
 ///////////////////////////////////
-(function() {
-	var topbar = $('#topbar');
-	if (!topbar.length) return;
-	//Menu Item Support
 
-	var canvasTourStudent = $('<div/>',{
-		id: 'canvasTour',
-		html: '<a href="https://unthsc.instructure.com/courses/782" id="canvasTourMsg" style="left: 0px;" title="Take the Canvas Student Tour" target="_blank">'+
-		'<span>New Student in Canvas? Take the Student Tour!</span>'+
-		'</a>'
+(function() {
+	var menu = $('#menu');
+	
+	if (!menu.length) return;
+	
+	/*var canvasTourStudent = $('<div/>',{
+		class: 'ic-flash-static ic-flash-info ic-flash--Theme-Editor',
+		id: 'cus-top-menu',
+		html: '<ul><li><a href="https://unthsc.instructure.com/courses/782" target="_blank">Canvas Student Orientation</a></li><li><a href="http://library.hsc.unt.edu/" target="_blank">Research Support</a>'+
+		'<li><a href="https://www.unthsc.edu/students/" target="_blank">Academic Support</a>'+		
+		'<li><a href="http://www.unthsc.edu/canvas" target="_blank">Canvas Support</a>'+
+		'<li><a href="http://web.unthsc.edu/helpdesk" target="_blank">ITS Helpdesk</a></li>'+
+		//Ending
+		'</ul></div>'
+	});*/
+	
+	var canvasTourStudent = $('<li/>',{
+		class: 'menu-item ic-app-header__menu-list-item',
+		id: 'cus-link-1',
+		html: '<a class="ic-app-header__menu-list-link" href="https://unthsc.instructure.com/courses/782" target="_blank"><div class="menu-item__text">Canvas Orientation</div></a></li>'		
 	});
-	if(window.location.href == "https://unthsc.instructure.com/"){
-		topbar.prepend(canvasTourStudent);
-		$('div#canvasTour').addClass("slideAnimation");
-	} else{
-		topbar.prepend(canvasTourStudent);
-	}
+	
+	var ResearchSupport = $('<li/>',{
+		class: 'menu-item ic-app-header__menu-list-item',
+		id: 'cus-link-2',
+		html: '<a class="ic-app-header__menu-list-link" href="http://library.hsc.unt.edu/" target="_blank"><div class="menu-item__text">Library</div></a></li>'		
+	});
+	
+	var ITSSupport = $('<li/>',{
+		class: 'menu-item ic-app-header__menu-list-item',
+		id: 'cus-link-3',
+		html: '<a class="ic-app-header__menu-list-link" href="http://web.unthsc.edu/helpdesk" target="_blank"><div class="menu-item__text">ITS Helpdesk</div></a></li>'		
+	});
+	
+	menu.append(canvasTourStudent, ResearchSupport, ITSSupport);
+	
+	
 	
 })();
 
-
-/*$(document).ready(function(){
-	var coursePing = document.createElement('script');
-	coursePing.src = "https://dl.dropboxusercontent.com/s/jer542iw128x3fs/pingdom.js";
-	coursePing.type = "text/javascript";
-	$("head").append(coursePing);
-});*/
+(function() {
+  	$("#cus-link-1 > a.ic-app-header__menu-list-link").addClass("icon-instructure");
+	$("#cus-link-2 > a.ic-app-header__menu-list-link").addClass("icon-search");
+	$("#cus-link-3 > a.ic-app-header__menu-list-link").addClass("icon-info");
+}());
 
 //////////////////////////////////////////////////////////////////
 //Parse Course Number - It is stored in the variable "coursenum"//
 //////////////////////////////////////////////////////////////////
-var coursenum1 = null;
+/*var coursenum1 = null;
 (function() {
 	var matches = location.pathname.match(/\/courses\/(.*)/);
 	if (!matches) return;
@@ -110,50 +81,8 @@ var coursenum1 = null;
 	if (killspot >= 0) {
 		coursenum1 = coursenum1.slice(0, killspot);
 	}
-}());
+}());*/
 
-
-/////////////////////////////////////////////////////
-//Where called for, include custom css or jqlibrary//
-/////////////////////////////////////////////////////
-
-//If we are on a wiki page, include the stylesheet.
-setTimeout(function(){
-if ($("#custom-css").length>0){
-	var customcssurl = "/courses/" + coursenum1 + "/file_contents/course%20files/global/css/style.css";
-	var coursecss = document.createElement('link');
-	coursecss.type = "text/css";
-	coursecss.rel = "stylesheet";
-	coursecss.href = customcssurl;
-
-	if ($("#unt-custom-css").length>0){
-		document.getElementById("unt-custom-css").appendChild(coursecss);
-	}
-	if ($(".unt-custom-css").length>0){
-		$(".unt-custom-css").appendChild(coursecss);
-	}
-	if ($("#custom-css").length>0){
-		$("head").append(coursecss);
-	}
-}
-}, 300);
-
-setTimeout(function(){
-if ($("#custom-script").length>0){
-	var customjsurl = "/courses/" + coursenum1 + "/file_contents/course%20files/global/js/script.js";
-	var coursejs = document.createElement('script');
-	coursejs.src = customjsurl;
-	coursejs.type = "text/javascript";
-	document.getElementsByTagName('head')[0].appendChild(coursejs);
-}
-  }, 300);
-  
-///////////////////////////////////////////
-//Make Unpublished message stick out more//
-///////////////////////////////////////////
-
-if ($(".reminder:contains('This Course is Unpublished')").length > 0) {
-	$("body").prepend('<style>.reminder {border: 2px solid #a34140;}.reminder h2 {background-color: #FFEAEA; color: #a34140; border-bottom: 2px solid #a34140;font-weight:bold;}</style>');}
 
 /*
 Adds bulk publishing and unpublishing
@@ -180,43 +109,13 @@ $().ready(function (){
 	}
 });
 
+///////////////////////////////////////////
+//Make Unpublished message stick out more//
+///////////////////////////////////////////
 
-if ($("#left-side").length>0 && location.pathname.match(/\/courses\/(.*)/)){
-	$( "ul#section-tabs").find("li > a.home").addClass("icon-home");
-	$( "ul#section-tabs").find("li > a.announcements").addClass("icon-announcement");
-	$( "ul#section-tabs").find("li > a.assignments").addClass("icon-assignment");
-	$( "ul#section-tabs").find("li > a.discussions").addClass("icon-discussion");
-	$( "ul#section-tabs").find("li > a.modules").addClass("icon-module");
-	$( "ul#section-tabs").find("li > a.quizzes").addClass("icon-quiz");
-	$( "ul#section-tabs").find("li > a.grades").addClass("icon-check-plus");
-	$( "ul#section-tabs").find("li > a.conferences").addClass("icon-media");
-	$( "ul#section-tabs").find("li > a.collaborations").addClass("icon-group");
-	$( "ul#section-tabs").find("li > a.people").addClass("icon-user");
-	$( "ul#section-tabs").find("li > a.context_external_tool_277").addClass("icon-filmstrip");
-	$( "ul#section-tabs").find("li > a.context_external_tool_278").addClass("icon-video");
-	$( "ul#section-tabs").find("li > a.files").addClass("icon-download");
-	$( "ul#section-tabs").find("li > a.syllabus").addClass("icon-syllabus");
-	$( "ul#section-tabs").find("li > a.outcomes").addClass("icon-star");
-	$( "ul#section-tabs").find("li > a.pages").addClass("icon-document");
-	$( "ul#section-tabs").find("li > a.settings").addClass("icon-settings");
-	$( "ul#section-tabs").find("li > a:contains('Proctortack')").addClass("icon-lock");
-	$( "ul#section-tabs").find("li > a:contains('Proctortrack')").addClass("icon-lock");
-	$( "ul#section-tabs").find("li > a:contains('Chat')").addClass("icon-discussion-reply");
-	$( "ul#section-tabs").find("li > a:contains('Peerwise')").addClass("icon-peer-review");
-	$( "ul#section-tabs").find("li > a:contains('Student Portfolios')").addClass("fa fa-medkit iconFontIncrease");
-}
+if ($(".reminder:contains('This Course is Unpublished')").length > 0) {
+	$("body").prepend('<style>.reminder {border: 2px solid #a34140;}.reminder h2 {background-color: #FFEAEA; color: #a34140; border-bottom: 2px solid #a34140;font-weight:bold;}</style>');}
 
-(function() {
-    $("#grades_menu_item > a.menu-item-no-drop").addClass("icon-check-plus");
-	$("#calendar_menu_item > a.menu-item-no-drop").addClass("icon-calendar-day");
-	$("#courses_menu_item > a.menu-item-title").addClass("icon-folder");
-	if($('a.menu-item-title:contains("Courses & Groups")').length){
-		$("#courses_menu_item > a.menu-item-title").addClass( "icon-folder-with-groups" );}
-	$("#context_external_tool_373_menu_item > a.menu-item-no-drop").addClass("icon-instructure");
-	$("#courses_menu_item > a.menu-item-title").addClass("icon-folder");
-	$("#resources_menu_item > a.menu-item-title").addClass("icon-collection-save");
-	$("#support_menu_item > a.menu-item-title").addClass("icon-question");
-}());
 
 /*jslint browser: true, sloppy: false, eqeq: false, vars: false, maxerr: 50, indent: 4, plusplus: true */
 /*global $, jQuery, alert, console, tinyMCE */
@@ -244,13 +143,11 @@ if ($("#left-side").length>0 && location.pathname.match(/\/courses\/(.*)/)){
 // Development version will be loaded in the following courses
 var iframeID,
     // Path to where the canvasCustomTools folder is located
-    klToolsPath = 'https://canvastools.unthsc.edu/global/custom_tools/',
+    klToolsPath = 'https://canvastools.unthsc.edu/global/design_tools/',
     // Path to the tools_variables file
     klToolsVariablesFile = klToolsPath + 'js/tools_variables.js',
     // Path to additional_customization file
     klToolsAdditionalCustomizationFile = klToolsPath + 'js/additional_customization.js',
-    // To utilize the features that pull from the Canvas api you will need the hosted php files put their path here
-    klApiToolsPath = klToolsPath + 'api/',
     // Path to institutional css file
     klGlobalCSSFile = 'https://canvastools.unthsc.edu/global/css/canvasGlobal.css',
     klFontAwesomePath = '//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css',
@@ -294,6 +191,52 @@ $.getScript(klToolsVariablesFile, function () {
 ////////////////////////////////////////////////////
 // END KENNETHWARE CONFIG                         //
 ////////////////////////////////////////////////////
+
+/////////////////////////////////////////////////////
+//Where called for, include custom css or jqlibrary//
+/////////////////////////////////////////////////////
+
+//If we are on a wiki page, include the stylesheet.
+
+
+
+setTimeout(function(){
+if ($("#custom-css").length>0){
+	var customcssurl2 = "/courses/" + coursenum + "/file_contents/course%20files/global/css/style.css";
+	var coursecss2 = document.createElement('link');
+	
+	coursecss2.type = "text/css";
+	coursecss2.rel = "stylesheet";
+	coursecss2.href = customcssurl2;
+
+	document.getElementsByTagName('head')[0].appendChild(coursecss2);
+}
+}, 300);
+
+setTimeout(function(){
+if ($("#custom-css").length>0){
+	var customcssurl = "https://canvastools.unthsc.edu/global/bach-epid5313/global/css/style.css";
+	var coursecss = document.createElement('link');
+	
+	coursecss.type = "text/css";
+	coursecss.rel = "stylesheet";
+	coursecss.href = customcssurl;
+	document.getElementsByTagName('head')[0].appendChild(coursecss);
+}
+}, 300);
+
+setTimeout(function(){
+if ($("#custom-css").length>0){
+	var customjsurl = "https://canvastools.unthsc.edu/global/bach-epid5313/global/js/script.js";
+	/*var customjsurl = "/courses/" + coursenum + "/file_contents/course%20files/global/js/script.js";*/
+	var coursejs = document.createElement('script');
+	coursejs.src = customjsurl;
+	coursejs.type = "text/javascript";
+	document.getElementsByTagName('head')[0].appendChild(coursejs);
+}
+  }, 300);
+ 
+
 
 ////////////////////////////////////////////////////
 // Start CanvaBadges                              //
