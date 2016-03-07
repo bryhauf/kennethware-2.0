@@ -3,101 +3,11 @@
 /*The CSS below pertains to custom classes.*/
 /*******************************************/
 
-#cus-top-menu{
-	background-color: #FFF;
-	color: #000;
-	padding-left: 100px;
-	padding-right: 100px;
-	text-align: left;
-	text-transform: uppercase;
-	min-width: 930px;
-	max-height: 70px;
-	/*border-bottom: 1px solid #D6D6D6;*/
-		overflow: hidden;
+.gradebook-cell.muted{
+	color: #848484;
+	background-color: rgba(118, 204, 243, 0.1);
 }
 
-#cus-top-menu ul ul {
-	display: none;
-}
-
-	#cus-top-menu ul li:hover > ul {
-		display: block;
-	}
-
-
-#cus-top-menu ul {
-	background: #fff; 
-	/*background: linear-gradient(top, #efefef 0%, #bbbbbb 100%);  
-	background: -moz-linear-gradient(top, #efefef 0%, #bbbbbb 100%); 
-	background: -webkit-linear-gradient(top, #efefef 0%,#bbbbbb 100%); 
-	box-shadow: 0px 0px 9px rgba(0,0,0,0.15);*/
-	padding: 0 20px;
-	border-radius: 10px;  
-	list-style: none;
-	position: relative;
-	white-space: nowrap;
-	display: inline-table;
-	overflow: hidden;
-}
-	#cus-top-menu ul:after {
-		content: ""; clear: both; display: block;
-	}
-
-
-	#cus-top-menu ul li {
-		float: left;
-	}
-		#cus-top-menu ul li:hover {
-			/*background: #4b545f;
-			background: linear-gradient(top, #4f5964 0%, #5f6975 40%);
-			background: -moz-linear-gradient(top, #4f5964 0%, #5f6975 40%);
-			background: -webkit-linear-gradient(top, #4f5964 0%,#5f6975 40%);*/
-		}
-			#cus-top-menu ul li:hover a {
-				color: #60C659;
-			}
-			
-			#cus-top-menu ul li:active a{
-				color: #555;
-				background-color: #E7E7E7;
-			}
-		
-		#cus-top-menu ul li a {
-			display: block; 
-			padding: 25px 15px;
-			color: #757575;
-			text-decoration: none;
-		}
-			
-		
-	#cus-top-menu ul ul {
-		background: #fff; 
-		border-radius: 0px; 
-		padding: 0;
-		margin:0;
-		margin-top: 5px;
-		position: absolute; 
-		top: 100%;
-		/*box-shadow: 0px 0px 9px rgba(0,0,0,0.15);*/
-	}
-		#cus-top-menu ul ul li {
-			float: none; 
-			border-top: 1px solid #D6D6D6;
-			border-bottom: 1px solid #D6D6D6; 
-			position: relative;
-		}
-			#cus-top-menu ul ul li a {
-				padding: 15px 40px;
-				color: #fff;
-			}	
-				nav ul ul li a:hover {
-					background: #4b545f;
-				
-				}
-		
-	#cus-top-menu ul ul ul {
-		position: absolute; left: 100%; top:0;
-	}
 		
 
 
@@ -112,8 +22,17 @@
 	margin-left: 0px !important;
 }
 
-/*add icon to Support link*/
-li[id^="cus-link-"] a:hover, li[id^="cus-link-"] a:active, li[id^="cus-link-"] a:visited{
+
+li[id^="cus-link-"] a:hover, 
+li[id^="cus-link-"] a:active, 
+li[id^="cus-link-"] a:visited,
+li[id^="context_external_tool_672_menu_item"] a:hover, 
+li[id^="context_external_tool_672_menu_item"] a:active, 
+li[id^="context_external_tool_672_menu_item"] a:visited,
+li[id^="context_external_tool_681_menu_item"] a:hover, 
+li[id^="context_external_tool_681_menu_item"] a:active, 
+li[id^="context_external_tool_681_menu_item"] a:visited
+{
 	color:#fff;
 }
 
@@ -121,7 +40,7 @@ li[id^="cus-link-"] a.fa{
 	display: block;
 }
 
-li[id^="cus-link-"] a:before{
+li[id^="cus-link-"] a:before, li[id^="context_external_tool_672_menu_item"] a:before, li[id^="context_external_tool_681_menu_item"] a:before{
 	font-size: 28px;
 	color: rgb(255,255,255);
 	position: relative;
@@ -136,7 +55,8 @@ li[id^="cus-link-"] a:before{
 }
 
 /*hover effect icon*/
-li[id^="cus-link-"]:hover a:before{
+li[id^="cus-link-"]:hover a:before, 
+li[id^="context_external_tool_672_menu_item"]:hover a:before, li[id^="context_external_tool_681_menu_item"]:hover a:before{
 	-webkit-transform:scale(1.075);
 	transform:scale(1.075);
 }
@@ -293,6 +213,7 @@ li[id^="cus-link-"]:hover a:before{
   #kl_wrapper #kl_modules .ui-widget-header .ui-state-default {background-image: none;}
   #kl_wrapper #kl_modules .ui-widget-header {border-bottom: none;}
   @media screen and (max-width: 1168px) {
+	 #kl_wrapper #kl_modules ul {column-count:1; -moz-column-count:1; /* Firefox */ -webkit-column-count:1; }
     #kl_wrapper #kl_modules.kl_modules_columns_3 ul {column-count:2; -moz-column-count:2; /* Firefox */ -webkit-column-count:2; /* Safari and Chrome */ }
     #kl_wrapper #kl_modules.kl_modules_columns_4 ul {column-count:3; -moz-column-count:3; /* Firefox */ -webkit-column-count:3; /* Safari and Chrome */ }
   }
@@ -392,8 +313,8 @@ li[id^="cus-link-"]:hover a:before{
   /*********************************************************************/
   /******* FP: HORIZONTAL NAV THEME (Updated for img) ******************/
 
-  #kl_wrapper.kl_fp_horizontal_nav_2 #kl_banner {background-color: #0F2439; color: #FFF; font-family: "PT Sans"; height: 5.5em; margin-bottom:6px; width: 100%; }
-  #kl_wrapper.kl_fp_horizontal_nav_2 #kl_banner h2 { line-height: 26px; font-size: 26px; }
+  #kl_wrapper.kl_fp_horizontal_nav_2 #kl_banner {background-color: #0F2439; color: #FFF; font-family: "PT Sans"; height: 6.5em; margin-bottom:6px; width: 100%; }
+  #kl_wrapper.kl_fp_horizontal_nav_2 #kl_banner h2 { line-height: 26px; font-size: 26px; color: #fff; }
   #kl_wrapper.kl_fp_horizontal_nav_2 #kl_banner h2 small { line-height: 29px; margin-left: 5px; }
   #kl_wrapper.kl_fp_horizontal_nav_2 #kl_banner #kl_banner_left {border-right: 5px solid #fff; float: left; width: 100px; height: 72px; display: block; font-size: 1.2em; }
   #kl_wrapper.kl_fp_horizontal_nav_2 #kl_banner #kl_banner_left .kl_mod_text {width: 100%; padding: 9px 0 1px; display: block; font-size: 24px; line-height: 26px; text-align: center;}
@@ -414,9 +335,9 @@ li[id^="cus-link-"]:hover a:before{
   /******* FP: PANEL NAV THEME (Updated for img) ***********************/
 
   #kl_wrapper.kl_fp_panel_nav_2 {position: relative; }
-  #kl_wrapper.kl_fp_panel_nav_2 #kl_banner {background-color: #0F2439; color: #FFF; /*font-family: "PT Sans";*/ height: 72px; margin-bottom:6px; width: 100%; }
+  #kl_wrapper.kl_fp_panel_nav_2 #kl_banner {background-color: #0F2439; color: #FFF !important; /*font-family: "PT Sans";*/ height: 5.5em; margin-bottom:6px; width: 100%; }
   #kl_wrapper.kl_fp_panel_nav_2 #kl_banner {max-width:100%; }
-  #kl_wrapper.kl_fp_panel_nav_2 #kl_banner h2 {line-height: 26px; font-size: 26px; margin: 10px 0 0 0; }
+  #kl_wrapper.kl_fp_panel_nav_2 #kl_banner h2 {line-height: 26px; font-size: 26px; margin: 10px 0 0 0; color: #fff; }
   #kl_wrapper.kl_fp_panel_nav_2 #kl_banner #kl_banner_left {border-right: 5px solid #fff; display: block; float: left; font-size: 1.2em; height: 72px; width: 100px; }
   #kl_wrapper.kl_fp_panel_nav_2 #kl_banner #kl_banner_left .kl_mod_text {display: block; font-size: 24px; line-height: 26px; padding: 9px 0 1px; text-align: center; width: 100%; }
   #kl_wrapper.kl_fp_panel_nav_2 #kl_banner #kl_banner_left .kl_mod_num {display: block; font-size: 17px; line-height: 26px; padding: 3px 0 7px; text-align: center; width: 100%; }
@@ -571,12 +492,12 @@ li[id^="cus-link-"]:hover a:before{
 
   /* FP */
   #kl_wrapper.kl_fp_flat_sections #kl_banner {background: #1e5799; color: #fff; margin-bottom: 5px; padding: 1px; }
-  #kl_wrapper.kl_fp_flat_sections #kl_banner h2 {margin: 10px 5px 9px 120px; text-transform: uppercase; }
+  #kl_wrapper.kl_fp_flat_sections #kl_banner h2 {margin: 10px 5px 9px 120px; text-transform: uppercase; color: #fff; }
   #kl_wrapper.kl_fp_flat_sections #kl_banner #kl_banner_left .kl_mod_text {display: block; padding: 15px 0 0; text-align: center; }
   #kl_wrapper.kl_fp_flat_sections #kl_banner #kl_banner_left .kl_mod_num {display: block; padding: 0 0 15px; text-align: center; }
   #kl_wrapper.kl_fp_flat_sections #kl_introduction p:first-child{font-size: 21px; font-weight: 200; line-height: 30px; }
   #kl_wrapper.kl_fp_flat_sections #kl_banner #kl_banner_left{background-color: #fff; border-radius: 50px; color: #696969; display: inline-block; font-size: 0.9em; height: 90px; left: 20px; line-height: 30px; margin: 7px 0; overflow: hidden; position: absolute; width: 90px; }
-  #kl_wrapper.kl_fp_flat_sections #kl_banner #kl_banner_right {display: block; font-size: 1em; margin-top: 2px; }
+  #kl_wrapper.kl_fp_flat_sections #kl_banner #kl_banner_right {display: block; font-size: 1em; margin-top: 2px; color: #fff;}
   #kl_wrapper.kl_fp_flat_sections #kl_banner #kl_banner_right .kl_subtitle { display: block; font-size: medium; line-height: 20px; margin-top: 5px;}
   /* SHARED */
 
@@ -666,8 +587,8 @@ li[id^="cus-link-"]:hover a:before{
 	background: -webkit-linear-gradient(top, #006430 0%,#008e1a 86%,#00a04a 100%); /* Chrome10+,Safari5.1+ */
 	background: -o-linear-gradient(top, #006430 0%,#008e1a 86%,#00a04a 100%); /* Opera 11.10+ */
 	background: -ms-linear-gradient(top, #006430 0%,#008e1a 86%,#00a04a 100%); /* IE10+ */
-	background: linear-gradient(to bottom, #006430 0%,#008e1a 86%,#00a04a 100%); /* W3C */; padding: 20px 0; color: #fff; margin: 0 -25px 50px;}
-  #kl_wrapper.kl_flat_sections #kl_banner h2 {text-transform: uppercase; text-align: center; border-top: 1px solid #fff; margin-left: 5px; margin-right: 5px; }
+	background: linear-gradient(to bottom, #006430 0%,#008e1a 86%,#00a04a 100%); /* W3C */; padding: 20px 0; color: #fff !important; margin: 0 -25px 50px;}
+  #kl_wrapper.kl_flat_sections #kl_banner h2 {text-transform: uppercase; text-align: center; border-top: 1px solid #fff; margin-left: 5px; margin-right: 5px; color: #fff; }
   #kl_wrapper.kl_flat_sections #kl_banner #kl_banner_left{display: block; background-color: #fff; font-size: 18px; line-height: 30px; width: 250px; margin: -15px auto 10px; border-radius: 30px; color: #696969; }
   #kl_wrapper.kl_flat_sections #kl_banner #kl_banner_right {font-size: 35px; margin-top: 20px; display: block; padding-right: 2px; padding-left: 2px;/*text-shadow: 1px 0px 2px #000;*/ }
   #kl_wrapper.kl_flat_sections #kl_banner #kl_banner_right .kl_subtitle { display: block; font-size: medium; line-height: 20px; margin-top: 5px;}
@@ -742,9 +663,9 @@ li[id^="cus-link-"]:hover a:before{
   #kl_wrapper.kl_box_left_2 #kl_banner #kl_banner_right .kl_subtitle,
   #kl_wrapper.kl_box_left_3 #kl_banner #kl_banner_right .kl_subtitle { font-size: medium; line-height: 15px; position: absolute; bottom: 5px; right: 25px;}
   /* VARIATIONS */
-  #kl_wrapper.kl_box_left #kl_banner #kl_banner_left {background: #0F2439; color: #fff; text-shadow: 1px 1px 2px #000000;}
-  #kl_wrapper.kl_box_left_2 #kl_banner #kl_banner_left {background: #AC8D73; color: #fff; font-weight: normal; font-size: 16px; text-shadow: 1px 1px 2px #000000; line-height: 20px; display: block; float: left; -webkit-box-shadow: 1px 1px 1px #000000; -moz-box-shadow: 1px 1px 1px #000000; box-shadow: 1px 1px 1px #000000; }
-  #kl_wrapper.kl_box_left_3 #kl_banner #kl_banner_left {background: #A4AEB5; color: #fff; font-weight: normal; font-size: 16px; text-shadow: 1px 1px 2px #000000; line-height: 20px; display: block; float: left; -webkit-box-shadow: 1px 1px 1px #000000; -moz-box-shadow: 1px 1px 1px #000000; box-shadow: 1px 1px 1px #000000; }
+  #kl_wrapper.kl_box_left #kl_banner #kl_banner_left {background: #0F2439; color: #fff !important; text-shadow: 1px 1px 2px #000000;}
+  #kl_wrapper.kl_box_left_2 #kl_banner #kl_banner_left {background: #AC8D73; color: #fff !important; font-weight: normal; font-size: 16px; text-shadow: 1px 1px 2px #000000; line-height: 20px; display: block; float: left; -webkit-box-shadow: 1px 1px 1px #000000; -moz-box-shadow: 1px 1px 1px #000000; box-shadow: 1px 1px 1px #000000; }
+  #kl_wrapper.kl_box_left_3 #kl_banner #kl_banner_left {background: #A4AEB5; color: #fff !important; font-weight: normal; font-size: 16px; text-shadow: 1px 1px 2px #000000; line-height: 20px; display: block; float: left; -webkit-box-shadow: 1px 1px 1px #000000; -moz-box-shadow: 1px 1px 1px #000000; box-shadow: 1px 1px 1px #000000; }
   #kl_wrapper.kl_box_left h3:before { background: #A4AEB5; color: #fff; text-shadow:  0px 0px 2px #000000; }
   #kl_wrapper.kl_box_left_2 h3:before { background: #0F2439; color: #fff; }
   #kl_wrapper.kl_box_left_3 h3:before { background: #A4AEB5; color: #fff; text-shadow:  0px 0px 2px #000000; }
@@ -781,15 +702,15 @@ li[id^="cus-link-"]:hover a:before{
   #kl_wrapper.kl_square_right_3 #kl_banner_right .kl_subtitle { padding: 5px 5px 5px 25px; position: absolute; display: block; text-shadow: none; color: #575757; font-size: medium;}
 
   /* VARIATIONS */
-  #kl_wrapper.kl_square_right h2 {background: #A4AEB5; color: #ffffff; text-shadow: 1px 1px 2px #000000;}
+  #kl_wrapper.kl_square_right h2 {background: #A4AEB5; color: #ffffff !important; text-shadow: 1px 1px 2px #000000;}
   #kl_wrapper.kl_square_right #kl_banner_left {background: #0F2439; }
   #kl_wrapper.kl_square_right h3:before { background: #0F2439; color: #fff;}
 
-  #kl_wrapper.kl_square_right_2 h2 {background: #0F2439; color: #ffffff; }
+  #kl_wrapper.kl_square_right_2 h2 {background: #0F2439; color: #ffffff !important; }
   #kl_wrapper.kl_square_right_2 #kl_banner_left {background: #AC8D73; }
   #kl_wrapper.kl_square_right_2 h3:before { background: #AC8D73; color: #fff; text-shadow: 1px 1px 2px #000000;}
 
-  #kl_wrapper.kl_square_right_3 h2 {background: #0F2439; color: #ffffff;}
+  #kl_wrapper.kl_square_right_3 h2 {background: #0F2439; color: #ffffff !important;}
   #kl_wrapper.kl_square_right_3 #kl_banner_left {background: #A4AEB5; }
   #kl_wrapper.kl_square_right_3 h3:before { background: #A4AEB5; color: #fff; text-shadow: 1px 1px 2px #000000;}
 
@@ -823,7 +744,7 @@ li[id^="cus-link-"]:hover a:before{
   #kl_wrapper.kl_circle_left_3 #kl_banner_right .kl_subtitle { padding: 5px; position: absolute; display: block; text-shadow: none; color: #575757; font-size: medium; right: 25px; bottom: -40px;}
 
   /* VARIATIONS */
-  #kl_wrapper.kl_circle_left #kl_banner { background: #A4AEB5; color: #fff; }
+  #kl_wrapper.kl_circle_left #kl_banner { background: #A4AEB5; color: #fff !important; }
   #kl_wrapper.kl_circle_left #kl_banner_left { background: #0F2439; }
   #kl_wrapper.kl_circle_left h3:before { background: #0F2439; color: #fff;}
 
@@ -875,7 +796,7 @@ li[id^="cus-link-"]:hover a:before{
 
   #kl_wrapper.kl_apple.kl_show_title #kl_banner { position:relative; margin-top: 10px;}
   #kl_wrapper.kl_apple #kl_banner { position:relative; margin: 10px -20px 50px;}
-  #kl_wrapper.kl_apple #kl_banner h2 {line-height: 35px; border-radius: 5px; background: #0F2439;  color: #fff; padding: 5px 10px 5px 2px; }
+  #kl_wrapper.kl_apple #kl_banner h2 {line-height: 35px; border-radius: 5px; background: #0F2439;  color: #fff !important; padding: 5px 10px 5px 2px; }
   #kl_wrapper.kl_apple #kl_banner #kl_banner_left{ float: left; height: 40px; border-top-left-radius: 5px; border-bottom-left-radius: 5px; }
   #kl_wrapper.kl_apple #kl_banner #kl_banner_left .kl_mod_text { display: none; }
   #kl_wrapper.kl_apple #kl_banner #kl_banner_left .kl_mod_num { display: block; height: 24px; color: #0F2439; font-size: 16px; font-weight: bold; padding: 8px 18px; margin-top: 9px; text-align: center; position: relative; top: -46px; line-height: 20px; border-top-left-radius: 5px; border-bottom-left-radius: 5px; }
@@ -922,9 +843,9 @@ li[id^="cus-link-"]:hover a:before{
   /***** BASIC COLOR THEME  ********************************************/
 
   #kl_wrapper.kl_basic_color.kl_show_title #kl_banner {margin-top: 22px; }
-  #kl_wrapper.kl_basic_color #kl_banner {background-color: #0F2439; color: #FFF; font-family: "PT Sans"; position: relative;}
+  #kl_wrapper.kl_basic_color #kl_banner {background-color: #0F2439; color: #FFF !important; font-family: "PT Sans"; position: relative;}
   #wiki_page_show #kl_wrapper.kl_basic_color #kl_banner { margin: 13px -22px 30px;}
-  #kl_wrapper.kl_basic_color #kl_banner h2 { line-height: 26px; font-size: 26px; }
+  #kl_wrapper.kl_basic_color #kl_banner h2 { line-height: 26px; font-size: 26px; color: #fff; }
   #kl_wrapper.kl_basic_color #kl_banner h2 small { line-height: 29px; margin-left: 5px; }
   #kl_wrapper.kl_basic_color #kl_banner #kl_banner_left {display: table-cell; border-right: 2px solid #fff; font-size: 1.2em; padding: 10px;}
   #kl_wrapper.kl_basic_color #kl_banner #kl_banner_left .kl_mod_text,
@@ -937,19 +858,19 @@ li[id^="cus-link-"]:hover a:before{
   /***** FP & CP COLORED HEADINGS THEME  *******************************/
   
   /* FP */
-  #kl_wrapper.kl_fp_colored_headings #kl_banner { border: none; background: #2F4661; color: #fff; margin: 0 0 5px 0; padding: 0 0 5px; overflow: visible;}
+  #kl_wrapper.kl_fp_colored_headings #kl_banner { border: none; background: #2F4661; color: #fff !important; margin: 0 0 5px 0; padding: 0 0 5px; overflow: visible;}
   #kl_wrapper.kl_fp_colored_headings #kl_banner h2 { position: relative; text-align: center; text-transform: uppercase; padding: 20px 0 0;}
   #kl_wrapper.kl_fp_colored_headings #kl_banner_image { border: none; margin: 0;}
   #kl_wrapper.kl_fp_colored_headings #kl_banner #kl_banner_left {background-color: #fff; color: #696969; display: inline-block; font-size: 18px; line-height: 20px; padding: 5px 20px; position: absolute; left: 15px; top: 15px; border-bottom: 10px solid #696969;}
   #kl_wrapper.kl_fp_colored_headings #kl_banner #kl_banner_left .kl_mod_text,
   #kl_wrapper.kl_fp_colored_headings #kl_banner #kl_banner_left .kl_mod_num  {width: 100%; padding: 2px 0 1px; display: block; font-size: 24px; line-height: 26px; text-align: center;}
-  #kl_wrapper.kl_fp_colored_headings #kl_banner #kl_banner_right {display: block; font-size: 35px; margin: 0 0 0 135px; text-align: left; }
+  #kl_wrapper.kl_fp_colored_headings #kl_banner #kl_banner_right {display: block; font-size: 35px; margin: 0 0 0 135px; text-align: left; color: #fff;}
   #kl_wrapper.kl_fp_colored_headings #kl_banner #kl_banner_right .kl_subtitle { display: block; font-size: medium; line-height: 20px; margin-top: 5px;}
   /* CP */
-  #kl_wrapper.kl_colored_headings #kl_banner {background: #2F4661; color: #fff; padding: 0 0 5px; margin: 0 -25px 50px; }
+  #kl_wrapper.kl_colored_headings #kl_banner {background: #2F4661; color: #fff !important; padding: 0 0 5px; margin: 0 -25px 50px; }
   #kl_wrapper.kl_colored_headings #kl_banner h2 { position: relative; text-align: center; text-transform: uppercase; }
   #kl_wrapper.kl_colored_headings #kl_banner #kl_banner_left {background-color: #fff; color: #696969; display: inline-block; font-size: 18px; line-height: 20px; margin: 0 auto 10px; padding: 5px 20px; }
-  #kl_wrapper.kl_colored_headings #kl_banner #kl_banner_right {display: block; font-size: 35px; margin-top: 0; }
+  #kl_wrapper.kl_colored_headings #kl_banner #kl_banner_right {display: block; font-size: 35px; margin-top: 0; color: #fff; }
   #kl_wrapper.kl_colored_headings #kl_banner #kl_banner_right .kl_subtitle { display: block; font-size: medium; line-height: 20px; margin-top: 5px;}
   /* SHARED */
   #kl_wrapper.kl_fp_colored_headings > div,
@@ -1105,7 +1026,7 @@ li[id^="cus-link-"]:hover a:before{
   /***** CP: BASIC BAR THEME    ****************************************/
 
   #kl_wrapper.kl_basic_bar #kl_banner { position:relative;}
-  #kl_wrapper.kl_basic_bar #kl_banner h2 {line-height: 35px; border-radius: 5px; background: #8F0222; color: #fff; padding: 5px 10px 5px 2px; }
+  #kl_wrapper.kl_basic_bar #kl_banner h2 {line-height: 35px; border-radius: 5px; background: #8F0222; color: #fff !important; padding: 5px 10px 5px 2px; }
   #kl_wrapper.kl_basic_bar #kl_banner #kl_banner_left{height: 40px; border-top-left-radius: 5px; border-bottom-left-radius: 5px; padding-left: 5px; }
   #kl_wrapper.kl_basic_bar #kl_banner #kl_banner_left{padding-left: 5px; }
   #kl_wrapper.kl_basic_bar #kl_banner_right .kl_subtitle { font-size: medium; position: absolute; bottom: -30px; right: 0; color: #575757; }
@@ -1196,7 +1117,7 @@ li[id^="cus-link-"]:hover a:before{
   #kl_wrapper.kl_ribbon blockquote {border-left: 5px solid #E0E0E0; }
   
   
-#kl_wrapper.kl_ribbon #kl_banner {  background: #fff; padding: 0px 20px 0px 20px; margin-top: 0px; margin-bottom: -35px; color: #fff; overflow: visible; border-radius: 0px; /*box-shadow: 0px 0px 10px #555;*/}
+#kl_wrapper.kl_ribbon #kl_banner {  background: #fff; padding: 0px 20px 0px 20px; margin-top: 0px; margin-bottom: -35px; color: #fff !important; overflow: visible; border-radius: 0px; /*box-shadow: 0px 0px 10px #555;*/}
  	  #kl_wrapper.kl_ribbon #kl_banner h2 { z-index: 1; 
 			position: relative; margin: 0px -30px 30px; padding: 30px 40px 20px 20px; text-shadow: 0px 1px rgba(0, 0, 0, 0.8); border-top: 1px solid #fff;
 			/*box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.3);*/  color: #FFF; font-family: "Helvetica Neue",Helvetica,Arial,sans-serif; font-size: 52px; letter-spacing: 3px; 

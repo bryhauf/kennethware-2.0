@@ -45,19 +45,19 @@
 		html: '<a class="ic-app-header__menu-list-link" href="https://unthsc.instructure.com/courses/782" target="_blank"><div class="menu-item__text">Canvas Orientation</div></a></li>'		
 	});
 	
-	var ResearchSupport = $('<li/>',{
+	/*var ResearchSupport = $('<li/>',{
 		class: 'menu-item ic-app-header__menu-list-item',
 		id: 'cus-link-2',
 		html: '<a class="ic-app-header__menu-list-link" href="http://library.hsc.unt.edu/" target="_blank"><div class="menu-item__text">Library</div></a></li>'		
-	});
+	});*/
 	
-	var ITSSupport = $('<li/>',{
+	/*var ITSSupport = $('<li/>',{
 		class: 'menu-item ic-app-header__menu-list-item',
 		id: 'cus-link-3',
 		html: '<a class="ic-app-header__menu-list-link" href="http://web.unthsc.edu/helpdesk" target="_blank"><div class="menu-item__text">ITS Helpdesk</div></a></li>'		
-	});
+	});*/
 	
-	menu.append(canvasTourStudent, ResearchSupport, ITSSupport);
+	menu.append(canvasTourStudent);
 	
 	
 	
@@ -65,9 +65,36 @@
 
 (function() {
   	$("#cus-link-1 > a.ic-app-header__menu-list-link").addClass("icon-instructure");
-	$("#cus-link-2 > a.ic-app-header__menu-list-link").addClass("icon-search");
-	$("#cus-link-3 > a.ic-app-header__menu-list-link").addClass("icon-info");
+	$("#context_external_tool_672_menu_item > a > svg").hide();
+	$("#context_external_tool_672_menu_item > a.ic-app-header__menu-list-link").addClass("icon-syllabus");
+	$("#context_external_tool_681_menu_item > a > svg").hide();
+	$("#context_external_tool_681_menu_item > a.ic-app-header__menu-list-link").addClass("icon-pin");
+	
+	
+	/*"removeClass("ic-icon-svg--commons svg-icon-commons").addClass("ic-icon-svg--syllabus svg-icon-syllabus");*/
+	/*$("#cus-link-2 > a.ic-app-header__menu-list-link").addClass("icon-search");*/
+	/*$("#cus-link-3 > a.ic-app-header__menu-list-link").addClass("icon-info");*/
 }());
+
+$().ready(function (){
+	var matchme = location.pathname.match(/\/accounts\/1\/external_tools\/672\.*/);
+	if(!matchme) return;
+		$("div.ic-app-nav-toggle-and-crumbs").hide();
+		$("div#left-side").hide();
+		$("div.ic-app-main-layout-horizontal").css("margin-left", "0px");
+});
+
+
+$().ready(function (){
+	var matchme2 = location.pathname.match(/\/accounts\/1\/external_tools\/681\.*/);
+	if(!matchme2) return;
+		$("div.ic-app-nav-toggle-and-crumbs").hide();
+		$("div#left-side").hide();
+		$("div.ic-app-main-layout-horizontal").css("margin-left", "0px");
+});
+
+
+
 
 //////////////////////////////////////////////////////////////////
 //Parse Course Number - It is stored in the variable "coursenum"//
