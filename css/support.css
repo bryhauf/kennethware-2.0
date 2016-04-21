@@ -1,0 +1,98 @@
+@charset "utf-8";
+/* CSS Document */
+/* Stylizes the Canvas Support Page */
+
+
+body {
+	min-width: 0px;
+}
+
+h2[class*=icon-]:before, h2[class^=icon-]:before, 
+  h3[class*=icon-]:before, h3[class^=icon-]:before, 
+  h4[class*=icon-]:before, h4[class^=icon-]:before, 
+  h5[class*=icon-]:before, h5[class^=icon-]:before, 
+  li[class*=icon-]:before, li[class^=icon-]:before { font-family: 'canvas-icons'; display: inline-block; vertical-align: top; text-rendering: optimizeLegibility; font-size: 22px;*/ text-transform: none !important; font-weight: normal !important; font-style: normal !important; margin-right: 5px; }
+
+
+header {
+    overflow: hidden;
+	/*text-align: center;*/
+border-bottom: 1px solid #d4d4d4;
+
+}
+
+header.page-title {
+    /*background-color: #565A5C;*/
+    padding: 15px 0 0 0;
+    margin: 0px 0 0px;
+    color: #000;
+}
+
+.sub-title-header{
+	text-transform: upper-case;	
+	font-size: 22px;
+	line-height: 22px;
+}
+
+.title-header{
+	font-size: 30px;
+	line-height: 30px;
+}
+
+.support-container {
+	padding-left: 5px;
+	padding-right: 5px;
+	font-size: 30px;
+	border-bottom: 1px solid #d4d4d4;
+	margin-bottom: 3px;
+	width: 100%;
+}
+
+.support-container p{
+	margin: 0 0 0 0;
+	padding: 0;	
+	
+}
+
+
+
+#sub-message{
+	border-bottom: 1px solid #d4d4d4;
+	background-color: #B1CFDA;
+}
+
+#sub-message p{
+	padding-left: 10px;
+	padding-right: 10px;
+	font-weight: 600;
+}
+
+#support_header_image{
+	
+}
+
+#content {
+	width: 100%;
+	max-width: 768px;
+
+}
+
+#technical_support, #resources{
+	margin: 12px 0 5px 0;
+}
+
+#resources {
+	width: 100%;
+	position: relative;
+
+}
+
+#resources div {
+	display: inline-block;
+	vertical-align: top;
+	max-width: 345px;
+	min-width: 250px;
+	padding-right: 50px;
+
+}
+
