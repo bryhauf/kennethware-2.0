@@ -3897,6 +3897,7 @@ klToolsArrays, vendor_legacy_normal_contrast, klAfterToolLaunch, klAdditionalAcc
             klRemoveTableStyle(parentTable);
             tinyMCE.DOM.addClass(parentTable, myClass);
         });
+		
     }
    ////// Custom Tools Accordion tab setup  //////
     function klCustomTablesSection() {
@@ -3966,8 +3967,9 @@ klToolsArrays, vendor_legacy_normal_contrast, klAfterToolLaunch, klAdditionalAcc
             '            <a href="#" class="btn btn-mini kl_table_style" rel="table table-bordered">Border</a>' +
             '            <a href="#" class="btn btn-mini kl_table_style" rel="table table-condensed">Condensed</a>' +
             '            <a href="#" class="btn btn-mini kl_table_style" rel="table table-striped">Zebra</a>' +
+
             '        </div>' +
-            '        <div class="kl_margin_bottom"><a href="#" class="btn btn-mini kl_table_style kl_remove" rel=""><i class="icon-end"></i> Remove Table Style</a></div>' +
+            '        <div class="kl_margin_bottom"><a href="#" class="btn btn-mini kl_table_style kl_remove" rel=""><i class="icon-end"></i> Remove Table Style</a></div>' + 
             '        <span>Row Background:</span>' +
             '        <div class="btn-group kl_margin_bottom">' +
             '            <a href="#" class="btn btn-mini kl_table_row_backgrounds kl_row_bg_success" rel="success">Success</a>' +
