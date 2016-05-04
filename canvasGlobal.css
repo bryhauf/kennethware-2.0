@@ -345,9 +345,9 @@ li[id^="context_external_tool_672_menu_item"]:hover a:before, li[id^="context_ex
   #kl_wrapper.kl_fp_panel_nav_2 #kl_banner #kl_banner_right .kl_subtitle { display: block; font-size: medium; line-height: 20px; margin-top: 5px;}
   #kl_wrapper.kl_fp_panel_nav_2 #kl_banner_image {margin-bottom: 20px; }
 
-  #kl_wrapper.kl_fp_panel_nav_2 #kl_navigation {background-color: rgba(255, 255, 255, 0.75); color: #0F2439; font-family: "Helvetica", "Arial", sans-serif; font-size: 16px; font-weight: bold; /*height: 313px;*/ margin: 0; min-width: 250px; overflow-x:hidden; overflow-y: auto; position: absolute; top: 78px; width: 30%; }
-  #kl_wrapper.kl_fp_panel_nav_2 #kl_navigation ul {margin: 30px 0 0 15px; }
-  #kl_wrapper.kl_fp_panel_nav_2 #kl_navigation ul li {background: none; display: block; list-style-type: none; padding: 0 0 50px 10px; }
+  #kl_wrapper.kl_fp_panel_nav_2 #kl_navigation {background-color: rgba(255, 255, 255, 0.75); color: #0F2439; font-family: "Helvetica", "Arial", sans-serif; font-size: 16px; font-weight: bold; height: 241px; margin: 0; min-width: 250px; overflow-x:hidden; overflow-y: auto; position: absolute; top: 78px; width: 30%; }
+  #kl_wrapper.kl_fp_panel_nav_2 #kl_navigation ul {margin: 20px 0 0 15px; }
+  #kl_wrapper.kl_fp_panel_nav_2 #kl_navigation ul li {background: none; display: block; list-style-type: none; padding: 0 0 31px 10px; }
   #kl_wrapper.kl_fp_panel_nav_2 #kl_navigation ul li a {color: #003366; }
   #kl_wrapper.kl_fp_panel_nav_2 #kl_navigation ul li a:hover {color: #0088CC; }
   #kl_wrapper.kl_fp_panel_nav_2 #kl_navigation li a:visited { color: #0088CC; }
