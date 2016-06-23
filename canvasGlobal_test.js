@@ -67,8 +67,8 @@
   	$("#cus-link-1 > a.ic-app-header__menu-list-link").addClass("icon-instructure");
 	$("#context_external_tool_672_menu_item > a > svg").hide();
 	$("#context_external_tool_672_menu_item > a.ic-app-header__menu-list-link").addClass("icon-syllabus");
-	/*$("#context_external_tool_681_menu_item > a > svg").hide();
-	$("#context_external_tool_681_menu_item > a.ic-app-header__menu-list-link").addClass("icon-pin");*/
+	$("#context_external_tool_681_menu_item > a > svg").hide();
+	$("#context_external_tool_681_menu_item > a.ic-app-header__menu-list-link").addClass("icon-pin");
 	
 	
 	/*"removeClass("ic-icon-svg--commons svg-icon-commons").addClass("ic-icon-svg--syllabus svg-icon-syllabus");*/
@@ -79,6 +79,15 @@
 $().ready(function (){
 	var matchme = location.pathname.match(/\/accounts\/1\/external_tools\/672\.*/);
 	if(!matchme) return;
+		$("div.ic-app-nav-toggle-and-crumbs").hide();
+		$("div#left-side").hide();
+		$("div.ic-app-main-layout-horizontal").css("margin-left", "0px");
+});
+
+
+$().ready(function (){
+	var matchme2 = location.pathname.match(/\/accounts\/1\/external_tools\/681\.*/);
+	if(!matchme2) return;
 		$("div.ic-app-nav-toggle-and-crumbs").hide();
 		$("div#left-side").hide();
 		$("div.ic-app-main-layout-horizontal").css("margin-left", "0px");
@@ -113,7 +122,7 @@ $().ready(function (){
 		$('div.header-bar-right').prepend('<button class="btn btn-small" id="mtc-publish-all" data-tooltip=\'{"tooltipClass":"popover popover-padded", "position":"bottom"}\'  title="This process may take some time depending on the number of items/modules that need to be published. Scroll down the modules list to watch progress."><i class="icon-publish MTC-publishAll" style="color:green;"></i> Publish All</button> ');
 		
 		$('button#mtc-publish-all').click(function(ele){
-			$('i.icon-unpublish').parent().trigger("click");
+			$('i.icon-unpublished').parent().trigger("click");
 		});
 		$('button#mtc-unpublish-all').click(function(ele){
 			$('i.icon-publish:not(i.MTC-publishAll)').parent().not('[data-unpublishable=false]').trigger("click");
@@ -167,7 +176,7 @@ var iframeID,
     // Path to additional_customization file
     klToolsAdditionalCustomizationFile = klToolsPath + 'js/additional_customization.js',
     // Path to institutional css file
-    klGlobalCSSFile = 'https://canvastools.unthsc.edu/global/css/canvasGlobal.css',
+    klGlobalCSSFile = 'https://canvastools.unthsc.edu/global/css/canvasGlobal_test.css',
     klFontAwesomePath = '//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css',
     coursenum;
 
@@ -267,7 +276,7 @@ $(function() {
   // the Canvabadges domain, i.e. "https://www.canvabadges.org". If you have a custom
   // domain configured then it'll be something like "https://www.canvabadges.org/_my_site"
   // instead.
-  var protocol_and_host = 'https://www.canvabadges.org';
+  var protocol_and_host = null;
   if(!protocol_and_host) {
     var $scripts = $("script");
     $("script").each(function() {
@@ -587,48 +596,79 @@ $(function() {
 }*/
 
 ////////////////////////////////////////////////////
-// Start Gamification Menu		                  //
+// Hide Canvas Dashboard Feedback                 //
 ////////////////////////////////////////////////////
-var gleVariables = {
- gleLimitByCourse: true,
-    // Change klLimitByUser to "true" to limit to users in the klUserArray array
-    // klUserArray is the Canvas user ID not the SIS user ID
-    gleCourseArray: [
-        '6572'
+
+
+var feedbackWrappersArray = [
+        '#right-side' // Course Front Page
+        
     ]
+
+function feedbackCheck(feedbackWrapperElement) {
+    'use strict';
+    var feedbackLoaded = false;
+    // Content Pages
+    if ($('div.recent_feedback').length > 0) {
+        feedbackLoaded = true;
+    }
+    if (feedbackLoaded) {
+        console.log('Feedback has loaded');
+        postFeedbackLoaded();
+    } else {
+        setTimeout(function () {
+            console.log('Still no content, check again (' + feedbackWrapperElement + ')');
+            feedbackCheck(feedbackWrapperElement);
+        }, 100);
+    }
+}
+
+function postFeedbackLoaded (){
+	'use strict';
+for (var i = ENV.current_user_roles.length - 1; i > -1; i--) {
+	if(ENV.current_user_roles[i] == 'student'){
+	setTimeout( function(){		 
+	if( $('#right-side-wrapper').length > 0 && $('#dashboard').length > 0){	
+		$('#right-side-wrapper > aside > div.recent_feedback > h2').after("<span class='toggleFeedbackMsg'>Feedback Currently Hidden</span>");
+		
+		$('aside#right-side > div.rs-margin-lr').before("<button class='btn button-sidebar-wide Button--secondary toggleFeedback' type='button'>Show Feedback</button>");
+		
+		 
+	 } 
+	 
+	 else if  (location.pathname.match(/\/courses\/(.*)/) && $('div.recent_feedback').length > 0){
+			$('#right-side-wrapper > aside > div.recent_feedback > h2').after("<span class='toggleFeedbackMsg'>Feedback Currently Hidden</span>");
+			$('aside#right-side').append("<button class='btn button-sidebar-wide Button--secondary toggleFeedback' type='button'>Show Feedback</button>");
+		    
+			}	
+	 else {
+	 }
+		
+		$('.toggleFeedback').click(function(){
+			$("#right-side-wrapper > aside > div.recent_feedback > ul").slideToggle();
+				$(this).text(function(i, v){
+					return v === 'Show Feedback' ? 'Hide Feedback' : 'Show Feedback'
+				});
+		     $('span.toggleFeedbackMsg').toggle("slow");
+		 });
+		 
+	}, 300); 
+	console.log("Feedback Toggle Loaded");
+	}
+	};
 };
 
-function gleTriggerCourseCheck() {
+$(document).ready(function () {
     'use strict';
-	
-    var gleLoadTools = false;
+    var task,
+        i;
 
-    console.log('gleTriggerCourseCheck()');
-    // Only proceed if this passes the limits on the tools
-    if (gleVariables.gleLimitByCourse === true) {
-        console.log(coursenum);
-        // If the user's Canvas ID is in the klToolsVariables.klUserArray
-        if ($.inArray(coursenum, gleVariables.gleCourseArray) !== -1) {
-            gleLoadTools = true;
+    // Identify which page we are on and when the content has loaded
+    for (i = 0; i <= feedbackWrappersArray.length; i++) {
+        if ($(feedbackWrappersArray[i]).length > 0) {
+            // console.log(klContentWrappersArray[i] + ' Found');
+            feedbackCheck(feedbackWrappersArray[i]);
+            break;
         }
     }
-	if (gleLoadTools) {
-        if ($('div#left-side > nav > ul#section-tabs').length > 0) {
-			$('ul#section-tabs > li').hide();
-            $('ul#section-tabs > li > a.home').text("Main Menu");
-			$('ul#section-tabs > li > a.assignments').text("Challenges");
-            $('ul#section-tabs > li > a.discussions').text("Town Commune");
-			$('ul#section-tabs > li > a.grades').text("Experience");
-			$('ul#section-tabs > li > a.outcomes').text("Skill Mastery");
-			$('ul#section-tabs > li > a.modules').text("World Map");
-			$('ul#section-tabs > li > a.people').text("Heroes");
-			$('ul#section-tabs > li').show();
-        } else {
-            // console.log('Check Again');
-            setTimeout(function () {
-                gleTriggerCourseCheck();
-            }, 500);
-		}
-   }
-}
-gleTriggerCourseCheck();
+});

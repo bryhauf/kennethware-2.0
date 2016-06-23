@@ -3,6 +3,8 @@
 
 function klAdditionalAfterContentLoaded() {
     'use strict';
+
+
     // Additional code to run after a page's content has loaded
 }
 
@@ -21,5 +23,6 @@ function klAfterToolLaunch() {
 }
 function klAdditionalLiveView() {
     'use strict';
+
     // Additional code 
 }
