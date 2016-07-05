@@ -616,12 +616,26 @@ function gleTriggerCourseCheck() {
         if ($('div#left-side > nav > ul#section-tabs').length > 0) {
 			$('ul#section-tabs > li').hide();
             $('ul#section-tabs > li > a.home').text("Main Menu");
+				$('ul#section-tabs > li > a.home').hover(function(){
+					$(this).text("Home")}, function(){$(this).text("Main Menu");});
+			$('ul#section-tabs > li > a.announcements').text("Messages");
+				$('ul#section-tabs > li > a.announcements').hover(function(){
+					$(this).text("Announcements")}, function(){$(this).text("Messages");});
 			$('ul#section-tabs > li > a.assignments').text("Challenges");
+				$('ul#section-tabs > li > a.assignments').hover(function(){
+					$(this).text("Assignments")}, function(){$(this).text("Challenges");});
             $('ul#section-tabs > li > a.discussions').text("Town Commune");
-			$('ul#section-tabs > li > a.grades').text("Experience");
-			$('ul#section-tabs > li > a.outcomes').text("Skill Mastery");
+				$('ul#section-tabs > li > a.discussions').hover(function(){
+					$(this).text("Discussions")}, function(){$(this).text("Town Commune");});
+			$('ul#section-tabs > li > a.grades').text("Experience Points");
+				$('ul#section-tabs > li > a.grades').hover(function(){
+					$(this).text("Grades")}, function(){$(this).text("Experience Points");});
 			$('ul#section-tabs > li > a.modules').text("World Map");
+				$('ul#section-tabs > li > a.modules').hover(function(){
+					$(this).text("Modules")}, function(){$(this).text("World Map");});
 			$('ul#section-tabs > li > a.people').text("Heroes");
+				$('ul#section-tabs > li > a.people').hover(function(){
+					$(this).text("People")}, function(){$(this).text("Heroes");});
 			$('ul#section-tabs > li').show();
         } else {
             // console.log('Check Again');

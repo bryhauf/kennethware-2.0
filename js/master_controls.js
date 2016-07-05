@@ -42,8 +42,8 @@ function klAfterContentLoaded() {
     for (i = 0; i < klToolsVariables.klMatchCanvasBackgroundTemplates.length; i++) {
         // console.log(klToolsVariables.klMatchCanvasBackgroundTemplates[i]);
         if ($('#kl_wrapper').hasClass(klToolsVariables.klMatchCanvasBackgroundTemplates[i])) {
-            $('.show-content').css('background-color', '#EFEFEF');
-            $('#main').css('background-color', '#EFEFEF');
+            $('.show-content').css('background-color', '#FFF');
+            $('#main').css('background-color', '#FFF');
         }
     }
     klAdditionalAfterContentLoaded();

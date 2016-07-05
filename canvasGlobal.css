@@ -1337,7 +1337,7 @@ li[id^="context_external_tool_672_menu_item"]:hover a:before, li[id^="context_ex
   /***** FP & CP COLORED HEADINGS THEME  *******************************/
   
   /* FP */
-	#kl_wrapper.kl_fp_colored_headings #kl_banner { background: #006430 !important; /* Old browsers */
+	#kl_wrapper.kl_fp_colored_headings #kl_banner, #kl_wrapper.kl_colored_headings #kl_banner { background: #006430 !important; /* Old browsers */
 	background: -moz-linear-gradient(top, #006430 0%, #008e1a 86%, #00a04a 100%) !important; /* FF3.6+ */
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#006430), color-stop(86%,#008e1a), color-stop(100%,#00a04a)) !important; /* Chrome,Safari4+ */
 	background: -webkit-linear-gradient(top, #006430 0%,#008e1a 86%,#00a04a 100%) !important; /* Chrome10+,Safari5.1+ */
