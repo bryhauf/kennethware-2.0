@@ -67,8 +67,8 @@
   	$("#cus-link-1 > a.ic-app-header__menu-list-link").addClass("icon-instructure");
 	$("#context_external_tool_672_menu_item > a > svg").hide();
 	$("#context_external_tool_672_menu_item > a.ic-app-header__menu-list-link").addClass("icon-syllabus");
-	$("#context_external_tool_681_menu_item > a > svg").hide();
-	$("#context_external_tool_681_menu_item > a.ic-app-header__menu-list-link").addClass("icon-pin");
+	/*$("#context_external_tool_681_menu_item > a > svg").hide();
+	$("#context_external_tool_681_menu_item > a.ic-app-header__menu-list-link").addClass("icon-pin");*/
 	
 	
 	/*"removeClass("ic-icon-svg--commons svg-icon-commons").addClass("ic-icon-svg--syllabus svg-icon-syllabus");*/
@@ -79,15 +79,6 @@
 $().ready(function (){
 	var matchme = location.pathname.match(/\/accounts\/1\/external_tools\/672\.*/);
 	if(!matchme) return;
-		$("div.ic-app-nav-toggle-and-crumbs").hide();
-		$("div#left-side").hide();
-		$("div.ic-app-main-layout-horizontal").css("margin-left", "0px");
-});
-
-
-$().ready(function (){
-	var matchme2 = location.pathname.match(/\/accounts\/1\/external_tools\/681\.*/);
-	if(!matchme2) return;
 		$("div.ic-app-nav-toggle-and-crumbs").hide();
 		$("div#left-side").hide();
 		$("div.ic-app-main-layout-horizontal").css("margin-left", "0px");
@@ -122,7 +113,7 @@ $().ready(function (){
 		$('div.header-bar-right').prepend('<button class="btn btn-small" id="mtc-publish-all" data-tooltip=\'{"tooltipClass":"popover popover-padded", "position":"bottom"}\'  title="This process may take some time depending on the number of items/modules that need to be published. Scroll down the modules list to watch progress."><i class="icon-publish MTC-publishAll" style="color:green;"></i> Publish All</button> ');
 		
 		$('button#mtc-publish-all').click(function(ele){
-			$('i.icon-unpublished').parent().trigger("click");
+			$('i.icon-unpublish').parent().trigger("click");
 		});
 		$('button#mtc-unpublish-all').click(function(ele){
 			$('i.icon-publish:not(i.MTC-publishAll)').parent().not('[data-unpublishable=false]').trigger("click");
@@ -176,7 +167,7 @@ var iframeID,
     // Path to additional_customization file
     klToolsAdditionalCustomizationFile = klToolsPath + 'js/additional_customization.js',
     // Path to institutional css file
-    klGlobalCSSFile = 'https://canvastools.unthsc.edu/global/css/canvasGlobal_test.css',
+    klGlobalCSSFile = 'https://canvastools.unthsc.edu/global/css/canvasGlobal.css',
     klFontAwesomePath = '//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css',
     coursenum;
 
@@ -276,7 +267,7 @@ $(function() {
   // the Canvabadges domain, i.e. "https://www.canvabadges.org". If you have a custom
   // domain configured then it'll be something like "https://www.canvabadges.org/_my_site"
   // instead.
-  var protocol_and_host = null;
+  var protocol_and_host = 'https://www.canvabadges.org';
   if(!protocol_and_host) {
     var $scripts = $("script");
     $("script").each(function() {
@@ -595,6 +586,74 @@ $(function() {
 	$('#right-side').append(findAUser);
 }*/
 
+
+////////////////////////////////////////////////////
+// Start Gamification Menu		                  //
+////////////////////////////////////////////////////
+
+
+var gleVariables = {
+ gleLimitByCourse: true,
+    // Change klLimitByUser to "true" to limit to users in the klUserArray array
+    // klUserArray is the Canvas user ID not the SIS user ID
+    gleCourseArray: [
+        '6572'
+    ]
+};
+
+function gleTriggerCourseCheck() {
+    'use strict';
+	
+    var gleLoadTools = false;
+
+    console.log('gleTriggerCourseCheck()');
+    // Only proceed if this passes the limits on the tools
+    if (gleVariables.gleLimitByCourse === true) {
+        console.log(coursenum);
+        // If the user's Canvas ID is in the klToolsVariables.klUserArray
+        if ($.inArray(coursenum, gleVariables.gleCourseArray) !== -1) {
+            gleLoadTools = true;
+        }
+    }
+	if (gleLoadTools) {
+        if ($('div#left-side > nav > ul#section-tabs').length > 0) {
+			$('ul#section-tabs > li').hide();
+            $('ul#section-tabs > li > a.home').text("Main Menu");
+				$('ul#section-tabs > li > a.home').hover(function(){
+					$(this).text("Home")}, function(){$(this).text("Main Menu");});
+			$('ul#section-tabs > li > a.announcements').text("Messages");
+				$('ul#section-tabs > li > a.announcements').hover(function(){
+					$(this).text("Announcements")}, function(){$(this).text("Messages");});
+			$('ul#section-tabs > li > a.assignments').text("Challenges");
+				$('ul#section-tabs > li > a.assignments').hover(function(){
+					$(this).text("Assignments")}, function(){$(this).text("Challenges");});
+            $('ul#section-tabs > li > a.discussions').text("Town Commune");
+				$('ul#section-tabs > li > a.discussions').hover(function(){
+					$(this).text("Discussions")}, function(){$(this).text("Town Commune");});
+			$('ul#section-tabs > li > a.grades').text("Experience Points");
+				$('ul#section-tabs > li > a.grades').hover(function(){
+					$(this).text("Grades")}, function(){$(this).text("Experience Points");});
+			$('ul#section-tabs > li > a.modules').text("World Map");
+				$('ul#section-tabs > li > a.modules').hover(function(){
+					$(this).text("Modules")}, function(){$(this).text("World Map");});
+			$('ul#section-tabs > li > a.people').text("Heroes");
+				$('ul#section-tabs > li > a.people').hover(function(){
+					$(this).text("People")}, function(){$(this).text("Heroes");});
+			$('ul#section-tabs > li').show();
+        } else {
+            // console.log('Check Again');
+            setTimeout(function () {
+                gleTriggerCourseCheck();
+            }, 500);
+		}
+   }
+}
+gleTriggerCourseCheck();
+
+////////////////////////////////////////////////////
+// End Gamification Menu		                  //
+////////////////////////////////////////////////////
+
 ////////////////////////////////////////////////////
 // Hide Canvas Dashboard Feedback                 //
 ////////////////////////////////////////////////////
@@ -672,3 +731,7 @@ $(document).ready(function () {
         }
     }
 });
+
+////////////////////////////////////////////////////
+// End  Canvas Dashboard Feedback                 //
+////////////////////////////////////////////////////

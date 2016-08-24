@@ -646,3 +646,90 @@ function gleTriggerCourseCheck() {
    }
 }
 gleTriggerCourseCheck();
+
+
+////////////////////////////////////////////////////
+// End Gamification Menu		                  //
+////////////////////////////////////////////////////
+
+////////////////////////////////////////////////////
+// Hide Canvas Dashboard Feedback                 //
+////////////////////////////////////////////////////
+
+
+var feedbackWrappersArray = [
+        '#right-side' // Course Front Page
+        
+    ]
+
+function feedbackCheck(feedbackWrapperElement) {
+    'use strict';
+    var feedbackLoaded = false;
+    // Content Pages
+    if ($('div.recent_feedback').length > 0) {
+        feedbackLoaded = true;
+    }
+    if (feedbackLoaded) {
+        console.log('Feedback has loaded');
+        postFeedbackLoaded();
+    } else {
+        setTimeout(function () {
+            console.log('Still no content, check again (' + feedbackWrapperElement + ')');
+            feedbackCheck(feedbackWrapperElement);
+        }, 100);
+    }
+}
+
+function postFeedbackLoaded (){
+	'use strict';
+for (var i = ENV.current_user_roles.length - 1; i > -1; i--) {
+	if(ENV.current_user_roles[i] == 'student'){
+	setTimeout( function(){		 
+	if( $('#right-side-wrapper').length > 0 && $('#dashboard').length > 0){	
+		$('#right-side-wrapper > aside > div.recent_feedback > h2').after("<span class='toggleFeedbackMsg'>Feedback Currently Hidden</span>");
+		
+		$('aside#right-side > div.rs-margin-lr').before("<button class='btn button-sidebar-wide Button--secondary toggleFeedback' type='button'>Show Feedback</button>");
+		
+		 
+	 } 
+	 
+	 else if  (location.pathname.match(/\/courses\/(.*)/) && $('div.recent_feedback').length > 0){
+			$('#right-side-wrapper > aside > div.recent_feedback > h2').after("<span class='toggleFeedbackMsg'>Feedback Currently Hidden</span>");
+			$('aside#right-side').append("<button class='btn button-sidebar-wide Button--secondary toggleFeedback' type='button'>Show Feedback</button>");
+		    
+			}	
+	 else {
+	 }
+		
+		$('.toggleFeedback').click(function(){
+			$("#right-side-wrapper > aside > div.recent_feedback > ul").slideToggle();
+				$(this).text(function(i, v){
+					return v === 'Show Feedback' ? 'Hide Feedback' : 'Show Feedback'
+				});
+		     $('span.toggleFeedbackMsg').toggle("slow");
+		 });
+		 
+	}, 300); 
+	console.log("Feedback Toggle Loaded");
+	}
+	};
+};
+
+$(document).ready(function () {
+    'use strict';
+    var task,
+        i;
+
+    // Identify which page we are on and when the content has loaded
+    for (i = 0; i <= feedbackWrappersArray.length; i++) {
+        if ($(feedbackWrappersArray[i]).length > 0) {
+            // console.log(klContentWrappersArray[i] + ' Found');
+            feedbackCheck(feedbackWrappersArray[i]);
+            break;
+        }
+    }
+});
+
+////////////////////////////////////////////////////
+// End  Canvas Dashboard Feedback                 //
+////////////////////////////////////////////////////

@@ -9,6 +9,16 @@
 	background-color: rgba(118, 204, 243, 0.1);
 }
 
+div.recent_feedback > ul.right-side-list{
+	display: none;
+}
+
+.toggleFeedbackMsg{
+	display: block;
+	font-style: italic;
+	font-size: 0.8125rem;
+}
+
 /*Adjust threaded discussions to be more distinguished*/
 .replies {  
  padding-left: 7px;  
